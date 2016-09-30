@@ -1,3 +1,11 @@
+@font-face {
+    font-family: Helvetica;
+    src: url(Helvetica LT 43 Light Extended.ttf);
+}
+
+body {
+  font-family: Helvetica;
+}
 
 video { 
     position: relative;
@@ -27,8 +35,8 @@ video {
   margin:2rem;
   font-size: 1.2rem;
   position: relative;
-  top: -400px;
-  left: 160px;
+  top: -500px;
+  left: 260px;
   height: 0px;
 }
 h1 {
@@ -75,4 +83,8 @@ h1 {
 }
 .carousel-control.left, .carousel-control.right {
     background-image:none; 
+}
+
+.iconos {
+  color: red;
 }

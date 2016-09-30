@@ -9,12 +9,22 @@
 	  <script src="js/video.js"></script>
 	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	  <script src="js/carrusel.js"></script>
+
+	<style>
+		.iconos {
+			color: rgb(0, 187, 244);
+			font-size: 16pt;
+			border: 1px solid;
+			border-radius: 100%;
+			padding: 15px;
+		}
+
+	</style>
 </head>
 <body>
 	<header>
 	<nav class="navbar ">
-  <div class="container">
+  <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <span class="icon-bar" style="color: black;"></span>
@@ -37,7 +47,7 @@
 </nav>
 
 	</header>
-	<div class="container">
+	<div class="container-fluid">
 	<div class="row">
 		<video poster="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/polina.jpg" id="bgvid" playsinline autoplay muted loop>
 		  <!-- WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button  -->
@@ -45,13 +55,13 @@
 		<source src="http://thenewcode.com/assets/videos/polina.mp4" type="video/mp4">
 		</video>
 		<div id="polina">
-			<h1>LLEVA AL MERCADO TU IDEA <br>
+			<h1 style="font-size: 50px; font-weight: bold;">LLEVA AL MERCADO TU IDEA <br>
 			O PROYECTO BASADO EN COBRE, SUBPRODUCTOS Y LITIO</h1>
 			
-			<p>Conéctate con expertos en investigación, desarrollo, negocios y más.<br>
+			<p style="font-size: 20px;">Conéctate con expertos en investigación, desarrollo, negocios y más.<br>
 			Postula con tu proyecto no minero para dar solución y apertura a diferentes mercados.</p>
-			<a href="#" class="btn btn-info" role="button">Ver Bases</a>
-			<a href="#" class="btn btn-info" role="button" style="margin-left: 30px;">Postular Proyecto</a>
+			<a href="#" class="btn" role="button" style="border: 1px solid #fff; color: #fff;">Ver Bases</a>
+			<a href="#" class="btn " role="button" style="border: 1px solid gold; color: gold; margin-left: 30px;">Postular Proyecto</a>
 		</div>
 	</div>
 	<div class="row" style="text-align: center; padding: 60px;">
@@ -59,56 +69,37 @@
 		<p>Creemos que el mundo puede funcionar mejor gracias<br>
 		a las propiedades del cobre, sus subproductos (como el molibdeno) y otros minerales como el litio. </p>
 	</div>
-<div class="row">
-	<div class="col-md-12 text-center">
-    <h3>Bootstrap 3 Multiple Slide Carousel</h3>
-</div>
+<div class="row" style="background-color: rgb(30, 152, 138); padding: 60px;">
+
 <div class="col-md-6 col-md-offset-3">
     <div class="carousel slide" id="myCarousel">
         <div class="carousel-inner">
             <div class="item active">
-                <div class="col-xs-2"><a href="#"><img src="http://placehold.it/500/e499e4/fff&amp;text=1" class="img-responsive"></a>
+                <div class="col-xs-4"><h4>Cow Guard</h4>
                 </div>
             </div>
             <div class="item">
-                <div class="col-xs-2"><a href="#"><img src="http://placehold.it/500/e477e4/fff&amp;text=2" class="img-responsive"></a>
+                <div class="col-xs-4"><h4>Cow Guard</h4>
                 </div>
             </div>
             <div class="item">
-                <div class="col-xs-2"><a href="#"><img src="http://placehold.it/500/eeeeee&amp;text=3" class="img-responsive"></a>
+                <div class="col-xs-4"><h4>Cow Guard</h4>
                 </div>
             </div>
-            <div class="item">
-                <div class="col-xs-2"><a href="#"><img src="http://placehold.it/500/f4f4f4&amp;text=4" class="img-responsive"></a>
-                </div>
-            </div>
-            <div class="item">
-                <div class="col-xs-2"><a href="#"><img src="http://placehold.it/500/f566f5/333&amp;text=5" class="img-responsive"></a>
-                </div>
-            </div>
-            <div class="item">
-                <div class="col-xs-2"><a href="#"><img src="http://placehold.it/500/f477f4/fff&amp;text=6" class="img-responsive"></a>
-                </div>
-            </div>
-            <div class="item">
-                <div class="col-xs-2"><a href="#"><img src="http://placehold.it/500/eeeeee&amp;text=7" class="img-responsive"></a>
-                </div>
-            </div>
-            <div class="item">
-                <div class="col-xs-2"><a href="#"><img src="http://placehold.it/500/fcfcfc/333&amp;text=8" class="img-responsive"></a>
-                </div>
-            </div>
+           
+           
         </div> <a class="left carousel-control" href="#myCarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
  <a class="right carousel-control" href="#myCarousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
 
     </div>
 </div>
 </div>
-	<div class="row" style="background-color: gold; text-align: center; padding: 50px;">
+	<div class="row" style="background-color: rgb(243, 205, 0); text-align: center; padding: 50px;">
+		<img src="img/logo.png" alt="" style="margin-bottom: 10px;">
 		<p>Codelco Lab te invita a potenciar y desarrollar proyectos vinculados a nuevos usos del cobre y molibdeno<br>
 		Conectamos las innovaciones y desarrollos tecnológicos con el mercado, a través de la vinculación entre la ciencia, el emprendimiento y la empresa.</p>
 	</div>
-	<div class="row" style="background-color: gold; text-align: center; padding: 60px;">
+	<div class="row" style="background-color: rgb(243, 205, 0);; text-align: center; padding: 60px;">
 		<div class="col-sm-4">
 			<img src="img/paris.jpg" class="img-circle" alt="Cinque Terre" width="80" height="80">
 			<p style="margin-top: 5px;">Exploración</p>
@@ -135,22 +126,22 @@
 			y opciones de compras en compañías</p>
 		</div>
 	</div>
-	<div class="row" style="text-align: center;">
-		<div class="col-sm-4" style="padding: 50px;"><span class="glyphicon glyphicon-glass"></span> Acelerar time to market</div>
-		<div class="col-sm-4" style="padding: 50px;"><span class="glyphicon glyphicon-glass"></span> Articulación con stakeholders relevantes</div>
-		<div class="col-sm-4" style="padding: 50px;"><span class="glyphicon glyphicon-glass"></span> Basado en acuerdos comerciales</div>
-		<div class="col-sm-4" style="padding: 50px;"><span class="glyphicon glyphicon-glass"></span> Activa relación con universidades y centros tecnológicos</div>
-		<div class="col-sm-4" style="padding: 50px;"><span class="glyphicon glyphicon-glass"></span> Desarrollo y crecimiento de compañías apalancándose con fondos de inversión</div>
-		<div class="col-sm-4" style="padding: 50px;"><span class="glyphicon glyphicon-glass"></span> Fuerte confinanciamiento con instrumentos públicos y privados</div>
+	<div class="row" style="text-align: center; font-size: 16px;">
+		<div class="col-sm-4" style="padding: 50px;"><span class="glyphicon glyphicon-glass iconos"></span> Acelerar time to market</div>
+		<div class="col-sm-4" style="padding: 50px;"><span class="glyphicon glyphicon-glass iconos"></span> Articulación con stakeholders relevantes</div>
+		<div class="col-sm-4" style="padding: 50px;"><span class="glyphicon glyphicon-glass iconos"></span> Basado en acuerdos comerciales</div>
+		<div class="col-sm-4" style="padding: 50px;"><span class="glyphicon glyphicon-glass iconos"></span> Activa relación con universidades y centros tecnológicos</div>
+		<div class="col-sm-4" style="padding: 50px;"><span class="glyphicon glyphicon-glass iconos"></span> Desarrollo y crecimiento de compañías apalancándose con fondos de inversión</div>
+		<div class="col-sm-4" style="padding: 50px;"><span class="glyphicon glyphicon-glass iconos"></span> Fuerte confinanciamiento con instrumentos públicos y privados</div>
 	</div>
-	<div class="row" style="background-color: black; color: #fff; text-align: center; padding: 50px;" >
-		<h1>CODELCO LAB</h1>
-		<p>conecta innovación y desarrollos tecnológicos para llevaros al mercado.</p>
+	<div class="row" style="background-color: rgb(64, 64, 64); color: #fff; text-align: center; padding: 50px;" >
+		<h1 style="font-size: 18pt;">CODELCO LAB</h1>
+		<p style="font-size: 16pt;">conecta innovación y desarrollos tecnológicos para llevaros al mercado.</p>
 	</div>
 	<div class="row" >
-		<div class="col-sm-4" style="background-color: green; text-align: center; padding-top: 250px; padding-bottom: 60px;"><h2 style="color: #fff; border: 2px solid;">VER BASES</h2></div>
-		<div class="col-sm-4" style="background-color: orange; text-align: center; padding-top: 250px; padding-bottom: 60px;"><h2 style="color: #fff; border: 2px solid;">DESCARGAR BASES</h2></div>
-		<div class="col-sm-4" style="background-color: yellow; text-align: center; padding-top: 250px; padding-bottom: 60px;"><h2 style="color: #fff; border: 2px solid;">POSTULAR PROYECTO</h2></div>
+		<div class="col-sm-4" style="background-color: rgb(29, 153, 139); text-align: center; padding-top: 250px; padding-bottom: 60px;"><h2 style="color: #fff; border: 2px solid;">VER BASES</h2></div>
+		<div class="col-sm-4" style="background-color: rgb(225, 107, 46); text-align: center; padding-top: 250px; padding-bottom: 60px;"><h2 style="color: #fff; border: 2px solid;">DESCARGAR BASES</h2></div>
+		<div class="col-sm-4" style="background-color: rgb(243, 205, 0); text-align: center; padding-top: 250px; padding-bottom: 60px;"><h2 style="color: #fff; border: 2px solid;">POSTULAR PROYECTO</h2></div>
 	</div>
 	<div class="row" style="background-image: url('img/LOUSKYi.jpg'); padding-top: 80px; padding-bottom: 80px; color: #fff; position: relative;">
 		<div style="position: relative; left: 700px;"><h1 >Contacto</h1>
@@ -162,5 +153,27 @@
 		
 	</div>
 	</div>
+<script>
+$('#myCarousel').carousel({
+    interval: 4000
+});
+
+$('.carousel .item').each(function () {
+    var next = $(this).next();
+    if (!next.length) {
+        next = $(this).siblings(':first');
+    }
+    next.children(':first-child').clone().appendTo($(this));
+
+    for (var i = 0; i < 4; i++) {
+        next = next.next();
+        if (!next.length) {
+            next = $(this).siblings(':first');
+        }
+
+        next.children(':first-child').clone().appendTo($(this));
+    }
+});	
+</script>
 </body>
 </html>
