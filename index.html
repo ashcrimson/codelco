@@ -5,6 +5,7 @@
 	<title>Codelco</title>
 	  <meta name="viewport" content="width=device-width, initial-scale=1">
 	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
 	  <link rel="stylesheet" href="css/style.css">
 	  <script src="js/video.js"></script>
 	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -12,12 +13,166 @@
 
 	<style>
 		.iconos {
-			color: rgb(0, 187, 244);
+			color: red rgb(47,47,47);
 			font-size: 16pt;
-			border: 1px solid;
+			border: 3px solid;
+			border-color: rgb(30,152,138);
 			border-radius: 100%;
 			padding: 15px;
+			margin-right: 10px;
 		}
+
+		.iconos_grandes {
+  			color: #fff;
+  			font-size: 24pt;
+		}
+
+		.btn-info {
+			background-color: #fff;
+			border-color: #fff;
+			color: #000;
+			font-weight: bold;
+			border-radius: 0;
+		}
+
+		.bases {
+			padding-left: 60px;
+		}
+
+		
+		.btn-info:link {
+			background-color: #fff;
+			color: black;
+		}
+
+		.btn-info:visited {
+			background-color: rgb(236,203,17);
+		    border-color: rgb(236,203,17);
+		}
+
+		.btn-info:hover {
+		    background-color: rgb(236,203,17);
+		    border-color: rgb(236,203,17);
+		    color: black;
+		}
+
+		.btn-info:active {
+			background-color: rgb(236,203,17);
+			border-color: rgb(236,203,17);
+		}
+
+
+
+		.navbar-nav>li>a:link {
+    	color: black;
+    	text-decoration: none;
+		}
+
+		.navbar-nav>li>a:visited {
+			background-color: rgb(243, 205, 0);
+		}
+
+
+		.navbar-nav>li>a:hover {
+			background-color: rgb(243, 205, 0);
+		}
+
+		.navbar-nav>li>a:active {
+			background-color: rgb(243, 205, 0);
+		}
+
+		body {
+  			font-family: Myfont;
+		}
+
+		#polina {
+		  font-size: 12px;
+		  margin-top: 0;
+		  letter-spacing: .3rem;
+		  
+		}
+
+		#boton-play {
+			float: right; 
+			margin-right: 100px; 
+			margin-top: 100px; 
+			transition: width 2s; 
+			-webkit-transition: width 2s;
+		}
+
+		h1 {
+		  font-size: 3rem;
+		  margin-top: 0;
+		  letter-spacing: .3rem;
+		  font-family: Myfontdos;
+		}
+
+		.portada {
+			position: relative; top: -30px; height: 712px;
+		}
+
+		.cuadro-gris {
+			text-align: center; 
+			padding: 60px; 
+			background: rgba(211,211,211, 0.5); 
+			position: absolute; 
+			top: 400px; 
+			right: 2px; 
+			color: #000; 
+			width: 100%;
+		}
+
+		.cuadro-gris h1 {
+			font-size: 36px;
+			color: rgb(64,64,64);
+		}
+
+		.crecimiento {
+				-webkit-transition: width 2s; /* Safari 3.1 to 6.0 */
+    			transition: width 2s;
+		}
+
+		.crecimiento:hover {
+				width: 200px;
+		}
+
+		.queescodelcolab h1 {
+			color: rgb(64,64,64);
+		}
+
+		.grow { transition: all .2s ease-in-out; }
+		.grow:hover { transform: scale(1.8); }
+
+		@media screen and (max-width: 600px) {
+    		h1 {
+        		font-size: 16px;
+    		}
+
+	    	.portada {
+				position: static;
+			}
+
+			#polina {
+				margin-top: 50px;
+			}
+
+			#boton-play {
+				display: none;
+			}
+
+			.cuadro-gris h1 {
+				font-size: 18px;
+				font-family: helvetica;
+			}
+
+		}
+
+		@media screen and (min-width: 1900px) {
+			video { 
+			    position: relative;
+			    top: 450px;
+			    left: 50%;
+	}
 
 	</style>
 </head>
@@ -36,11 +191,11 @@
     <div class="collapse navbar-collapse" id="myNavbar">
      
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"> Inicio</a></li>
-      <li><a href="#"> Convocatoria</a></li>
-      <li><a href="#"> Objetivos</a></li>
-      <li><a href="#"> Bases</a></li>
-      <li><a href="#"> Postulación</a></li>
+          <li><a href="#"> Inicio</a></li>
+	      <li><a href="#convocatoria"> Convocatoria</a></li>
+	      <li><a href="#objetivos"> Objetivos</a></li>
+	      <li><a href="#bases"> Bases</a></li>
+	      <li style="background-color: rgb(224,106,45);"><a href="#postulacion"> Postulación</a></li>
       </ul>
     </div>
   </div>
@@ -48,132 +203,808 @@
 
 	</header>
 	<div class="container-fluid">
-	<div class="row">
-		<video poster="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/polina.jpg" id="bgvid" playsinline autoplay muted loop>
+	<div class="row portada">
+		<video  poster="img/IMG-20161007-WA0000.jpg" id="bgvid" playsinline autoplay muted loop>
 		  <!-- WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button  -->
-		<source src="http://thenewcode.com/assets/videos/polina.webm" type="video/webm">
-		<source src="http://thenewcode.com/assets/videos/polina.mp4" type="video/mp4">
+		<source src="videos/Vbg 1_portada_2_ webmsd.webm" type="video/webm">
+		<source src="videos/Vbg 1 portada 2 mp4.mp4" type="video/mp4">
 		</video>
 		<div id="polina">
-			<h1 style="font-size: 50px; font-weight: bold;">LLEVA AL MERCADO TU IDEA <br>
-			O PROYECTO BASADO EN COBRE, SUBPRODUCTOS Y LITIO</h1>
+		<div class="col-sm-10">
+			<div style="margin-left: 80px;">
+				<h1 >MINERALÍZATE 2016 <br>
+				lleva al mercado tu idea<br>
+				o proyecto basado en nuevos usos<br>
+				del cobre, molibdeno y litio.</h1>
+				
+				<p style="font-size: 18px;">Conéctate con expertos en investigación, desarrollo, negocios y más.<br>
+				Postula hasta el 04 de Noviembre en una de las 3 categorías:<br>
+				Idea, Desarrollo o Crecimiento.</p>
+				<div style="margin-top: 30px;">
+				<a href="#bases" class="btn agrandar" role="button" style="color: #fff; border-radius: 0px;">Ver Bases</a>
+				<a href="#" class="btn agrandar" role="button" style="border: 1px solid gold; border-radius: 0px; color: gold; margin-left: 30px; transition: padding 0.5s; -webkit-transition: padding 0.5s;">Postular Proyecto</a>
+				</div>
+			</div>
+			</div>
+			<div class="col-sm-2">
+			<a href="#" data-toggle="modal" data-target="#videomodal"><img src="img/boton-play.png"  alt="" id="boton-play" style=""></a></div>
+			<div class="cuadro-gris">
+				<h1>Investigación + Desarrollo + Innovación</h1>
+				<p>Creemos que el mundo puede funcionar mejor gracias<br>
+				a las propiedades del cobre, molibdeno y litio, principales minerales del país.</p>
+			</div>
 			
-			<p style="font-size: 20px;">Conéctate con expertos en investigación, desarrollo, negocios y más.<br>
-			Postula con tu proyecto no minero para dar solución y apertura a diferentes mercados.</p>
-			<a href="#" class="btn" role="button" style="border: 1px solid #fff; color: #fff;">Ver Bases</a>
-			<a href="#" class="btn " role="button" style="border: 1px solid gold; color: gold; margin-left: 30px;">Postular Proyecto</a>
 		</div>
 	</div>
-	<div class="row" style="text-align: center; padding: 60px;">
-		<h1>Innovación y desarrollo</h1>
-		<p>Creemos que el mundo puede funcionar mejor gracias<br>
-		a las propiedades del cobre, sus subproductos (como el molibdeno) y otros minerales como el litio. </p>
+
+	<div class="row" style="text-align: center; background-color: #fff; padding: 60px;">
+		<h1 style="color: rgb(64,64,64);">Nuestros casos de éxito que ya están en el mercado.</h1>
 	</div>
+
 <div class="row" style="background-color: rgb(30, 152, 138); padding: 60px;">
 
-<div class="col-md-6 col-md-offset-3">
+<div  style="width: 100%; text-align: left;">
     <div class="carousel slide" id="myCarousel">
-        <div class="carousel-inner">
+    <div class="row">
+        <div class="carousel-inner" style="text-align: center;">
             <div class="item active">
-                <div class="col-xs-4"><h4>Cow Guard</h4>
+                <div class="col-xs-4"><h4 style="font-size: 14px;">Metro<br> Valparaíso</h4>
                 </div>
             </div>
             <div class="item">
-                <div class="col-xs-4"><h4>Cow Guard</h4>
+                <div class="col-xs-4"><h4 style="font-size: 14px;">
+Hospital de Urgencia <br>Asistencia Pública</h4>
                 </div>
             </div>
             <div class="item">
-                <div class="col-xs-4"><h4>Cow Guard</h4>
+                <div class="col-xs-4"><h4 style="font-size: 14px;">Qstudio</h4>
                 </div>
             </div>
-           
-           
-        </div> <a class="left carousel-control" href="#myCarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
+            
+        </div> <a class="left carousel-control" href="#myCarousel" data-slide="prev" ><i class="glyphicon glyphicon-chevron-left"></i></a>
  <a class="right carousel-control" href="#myCarousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
-
+</div>  
     </div>
 </div>
 </div>
-	<div class="row" style="background-color: rgb(243, 205, 0); text-align: center; padding: 50px;">
+	<div id="convocatoria" class="row" style="background-color: rgb(243, 205, 0); text-align: center; padding: 50px;">
 		<img src="img/logo.png" alt="" style="margin-bottom: 10px;">
-		<p>Codelco Lab te invita a potenciar y desarrollar proyectos vinculados a nuevos usos del cobre y molibdeno<br>
-		Conectamos las innovaciones y desarrollos tecnológicos con el mercado, a través de la vinculación entre la ciencia, el emprendimiento y la empresa.</p>
+		<p>Codelco Lab te invita a desarrollar y potenciar proyectos que brinden<br>
+		soluciones innovadoras al país a través de nuevos usos del cobre, molibdeno y litio.</p>
 	</div>
-	<div class="row" style="background-color: rgb(243, 205, 0);; text-align: center; padding: 60px;">
+	<div class="row" style="background-color: rgb(243, 205, 0); text-align: center; padding-bottom: 60px;">
 		<div class="col-sm-4">
-			<img src="img/paris.jpg" class="img-circle" alt="Cinque Terre" width="80" height="80">
-			<p style="margin-top: 5px;">Exploración</p>
+			<img class="grow" src="img/ic_Estrella.png" style="width: 65px; height: 65px; background-color: #fff; border: 1px solid #fff; border-radius: 100%; padding: 5px; margin-bottom: 15px;" alt="" >
+			<h4 style="margin-top: 20px;">Idea</h4>
+			<p>Proyectos en etapas<br> iniciales de análisis.</p>
 		</div>
 		<div class="col-sm-4">
-			<img src="img/paris.jpg" class="img-circle" alt="Cinque Terre" width="80" height="80">
-			<p style="margin-top: 5px;">Gestión de Proyectos</p>
+			<img class="grow" src="img/ic_Engranaje.png" style="width: 65px; height: 65px; background-color: #fff; border: 1px solid #fff; border-radius: 100%; padding: 5px; margin-bottom: 15px;" alt="" >
+			<h4 style="margin-top: 20px;">Desarrollo</h4>
+			<p>Proyectos que ya contemplan<br> validaciones de concepto,<br> laboratorio, prototios u otros.</p>
 		</div>
-		<div class="col-sm-4">
-			<img src="img/paris.jpg" class="img-circle" alt="Cinque Terre" width="80" height="80">
-			<p style="margin-top: 5px;">Crecimiento</p>
+		<div class="col-sm-4" >
+			<img class="grow" src="img/ic_Crecimiento 2.png" style="width: 65px; height: 65px; background-color: #fff; border: 1px solid #fff; border-radius: 100%; padding: 5px; margin-bottom: 15px;" alt="" >
+			<h4 style="margin-top: 20px;" >Crecimiento</h4>
+			<p>Proyectos con ventas<br> en busca de<br> crecimiento.</p>
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-sm-6">
-			<img src="http://codelcolab.feriapixel.cl/wp-content/uploads/2015/10/flux_os.png" alt="">
+		<div class="col-sm-6"  style="text-align: center; background-color: rgb(224,106,45); color: #fff; padding: 50px; height: 380px;">
+			<h1>Alimentación mundial</h1>
+			<img class="grow" src="img/ic_Alimentacion.png" style="width: 48px; height: 48px; background-color: #fff; border: 1px solid; border-radius: 100%; padding: 5px; margin-top: 18px; margin-bottom: 25px;" alt="">
+			
+			<p style="text-align: center;">
+				Almacenamiento de alimentos<br>
+				Preservantes<br>
+				Cultivo de Alimentos<br>
+				Fertilizantes y biocidas<br>
+				Espacios de trabajo limpios<br>
+				Y otros
+			</p>
+			
 		</div>
-		<div class="col-sm-6" style="padding-top: 90px;">
-			<h1>Somos una aceleradora,<br>
-			incubadora y consultora</h1>
-			<p>Nuestro modelo de ingresos<br>
-			es en base a acuerdos comerciales livianos<br>
-			con royalties asociados<br>
-			y opciones de compras en compañías</p>
+		<div class="col-sm-6" style="text-align: center; background-color: rgb(224,134,88); color: #fff; padding: 50px; height: 380px;" >
+			<h1>Agua y medio ambiente</h1>
+			<img class="grow" src="img/ic_Agua.png" style="width: 48px; height: 48px; background-color: #fff; border: 1px solid; border-radius: 100%; padding: 5px; margin-top: 18px; margin-bottom: 25px;" alt="">
+			
+			<p style=" text-align: center;">
+				Tratamiento de aguas para consumo humano<br>
+				Tratamiento de aguas para consumo industrial y riego<br>
+				Almacenamiento y distribución<br>
+				Control de propagación de microalgas<br>
+				Disminución de impacto ambiental<br>
+				Y otros
+			</p>
+			
 		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-6" style="text-align: center; background-color: rgb(224,134,88); color: #fff; padding: 50px;  height: 380px;" >
+			<h1>Energía y electrónica</h1>
+			<img class="grow" src="img/ic_Energia.png" style="width: 48px; height: 48px; background-color: #fff; border: 1px solid; border-radius: 100%; padding: 5px; margin-top: 18px; margin-bottom: 25px;" alt="">
+			
+			<p style=" text-align: center;">
+				Generación de energía renovables y no convencionales<br>
+				Almacenamiento<br>
+				Distribución<br>
+				Transmisión<br>
+				Circuitos electrónicos<br>
+				Y otros
+			</p>
+			
+		</div>
+		<div class="col-sm-6" style="text-align: center; background-color: rgb(224,106,45);  color: #fff; padding: 50px; height: 380px;">
+			<h1>Bienestar humano</h1>
+			<img class="grow"  src="img/ic_Bienestar.png" style="width: 48px; height: 48px; background-color: #fff; border: 1px solid; border-radius: 100%; padding: 5px; margin-top: 18px; margin-bottom: 25px;" alt="">
+			
+			<p style=" text-align: center;">
+				Espacios bioseguros<br>
+				Tecnologías textiles<br>
+				Productos de higiene<br>
+				Superficies biocidas<br>
+				Y otros
+			</p>
+			
+		</div>
+		
+	</div>
+	<div class="row">
+		<div class="col-sm-6" style="text-align: center; background-color: rgb(224,106,45);  color: #fff; padding: 50px; height: 350px;">
+			<h1>Ciencias de la vida</h1>
+			<img class="grow" src="img/ic_Ciencias.png" style="width: 48px; height: 48px; background-color: #fff; border: 1px solid; border-radius: 100%; padding: 5px; margin-top: 18px; margin-bottom: 25px;" alt="">
+			
+			<p style=" text-align: center;">
+				Tratamiento de enfermedades y afecciones cutáneas<br>
+				Tratamientos médicos<br>
+				Aparatos ortopédicos<br>
+				Prevención de enfermedades en animales<br>
+				Y otros
+			</p>
+			
+		</div>
+		<div class="col-sm-6" style="text-align: center; background-color: rgb(224,134,88); color: #fff; padding: 50px; height: 350px;">
+			<h1>Otros</h1>
+			<img class="grow" src="img/ic_Otros.png" style="width: 48px; height: 48px; background-color: #fff; border: 1px solid; border-radius: 100%; padding: 5px; margin-top: 18px; margin-bottom: 25px;" alt="">
+			
+			<p style="text-align: center;">
+				Procesos industriales<br>
+				Y otros
+				
+			</p>
+			
+		</div>
+	<div id="bases" class="row" style="text-align: center; background-image: url(img/IMG-20161007-WA0002.jpg); padding: 60px; height: 550px;">
+		<a href="#postulacion" class="btn btn-lg agrandar" role="button" style="border: 1px solid #fff; border-radius: 0px; color: #fff; margin-top: 100px;">Conocer Bases</a>
 	</div>
 	<div class="row" style="text-align: center; font-size: 16px;">
-		<div class="col-sm-4" style="padding: 50px;"><span class="glyphicon glyphicon-glass iconos"></span> Acelerar time to market</div>
-		<div class="col-sm-4" style="padding: 50px;"><span class="glyphicon glyphicon-glass iconos"></span> Articulación con stakeholders relevantes</div>
-		<div class="col-sm-4" style="padding: 50px;"><span class="glyphicon glyphicon-glass iconos"></span> Basado en acuerdos comerciales</div>
-		<div class="col-sm-4" style="padding: 50px;"><span class="glyphicon glyphicon-glass iconos"></span> Activa relación con universidades y centros tecnológicos</div>
-		<div class="col-sm-4" style="padding: 50px;"><span class="glyphicon glyphicon-glass iconos"></span> Desarrollo y crecimiento de compañías apalancándose con fondos de inversión</div>
-		<div class="col-sm-4" style="padding: 50px;"><span class="glyphicon glyphicon-glass iconos"></span> Fuerte confinanciamiento con instrumentos públicos y privados</div>
+		<div class="container">
+			<div id="objetivos" class="row" style="padding: 50px;">
+				<div class="col-sm-6" style="text-align: right;">
+					<img src="img/Logo_Codelco_Lab_PNG-01.png" style="width: 320px; height: 256px;" alt="">
+				</div>
+				<div class="col-sm-6 queescodelcolab" style="text-align: left;">
+					<h1>¿Qué es Codelco Lab?</h1>
+					<p>Filial de Codelco, Incubadora y aceleradora de proyectos de base tecnológica<br> 
+					sobre nuevos usos del cobre, molibdeno y litio.</p>
+					<h1>¿Qué buscamos?</h1>
+					<p>Buscamos dar los recursos necesarios<br>
+					para que los proyectos tengan éxito en el mercado<br>
+					y sustenten una propuesta de valor que aborde<br>
+					problemas y desafíos mundiales</p>
+				</div>
+			</div>
+			<div class="row" style="padding: 50px;">
+				<div class="col-sm-4" style="padding: 50px; text-align: left;"><span class="glyphicon glyphicon-hourglass iconos" style="float: left;"></span> <span style="font-size: 14px;">Aceleramos el time-to-market</span></div>
+				<div class="col-sm-4" style="padding: 50px; text-align: left;"><span class="glyphicon glyphicon-sunglasses iconos" style="float: left;"></span><span style="font-size: 14px;"> Articulamos con stakeholders relevantes</span></div>
+				<div class="col-sm-4" style="padding: 50px; text-align: left;"><span class="glyphicon glyphicon-thumbs-up iconos" style="float: left;"></span> <span style="font-size: 14px;">Nos basamos en acuerdos comerciales livianos</span></div>
+				<div class="col-sm-4" style="padding: 50px; text-align: left;"><span class="glyphicon glyphicon-education iconos" style="float: left;"></span><span style="font-size: 14px;"> Activa relación con universidades y centros tecnológicos</span></div>
+				<div class="col-sm-4" style="padding: 50px; text-align: left;"><span class="glyphicon glyphicon-euro iconos" style="float: left;"></span><span style="font-size: 14px;">Impulsamos el desarrollo y crecimiento de compañías conectados con fondos</span><span style="margin-left: 65px; font-size: 14px;"> de inversión</span></div>
+				<div class="col-sm-4" style="padding: 50px; text-align: left;"><span class="glyphicon glyphicon-duplicate iconos" style="float: left;"></span><span style="font-size: 14px;"> Fuerte confinanciamiento con instrumentos públicos y privados</span></div>
+			</div>
+		</div>
 	</div>
-	<div class="row" style="background-color: rgb(64, 64, 64); color: #fff; text-align: center; padding: 50px;" >
-		<h1 style="font-size: 18pt;">CODELCO LAB</h1>
-		<p style="font-size: 16pt;">conecta innovación y desarrollos tecnológicos para llevaros al mercado.</p>
+	<div id="postulacion" class="row" style="background-color: rgb(64, 64, 64); color: #fff; text-align: center; padding: 50px;" >
+		<h1 >MINERALÍZATE 2016</h1>
+		<p style="font-size: 14pt;">CODELCO Lab conecta innovación y desarrollos tecnológicos para llevaros al mercado.<br>
+		Conoce los detalles en nuestras Bases de postulación y postula según tu etapa de desarrollo.</p>
 	</div>
-	<div class="row" >
-		<div class="col-sm-4" style="background-color: rgb(29, 153, 139); text-align: center; padding-top: 250px; padding-bottom: 60px;"><h2 style="color: #fff; border: 2px solid;">VER BASES</h2></div>
-		<div class="col-sm-4" style="background-color: rgb(225, 107, 46); text-align: center; padding-top: 250px; padding-bottom: 60px;"><h2 style="color: #fff; border: 2px solid;">DESCARGAR BASES</h2></div>
-		<div class="col-sm-4" style="background-color: rgb(243, 205, 0); text-align: center; padding-top: 250px; padding-bottom: 60px;"><h2 style="color: #fff; border: 2px solid;">POSTULAR PROYECTO</h2></div>
+	<div class="row" style="background-image: url('img/IMG-20161007-WA0003.jpg'); height: 600px; position: relative; text-align: center; ">
+	<!--
+		<a class="btn btn-info bases" style="position: absolute; left: 565px; top: 200px; padding-left: 122px;" href="archivos/Bases.pdf" >Ver bases</a>
+		<a href="archivos/Bases.docx" class="btn btn-info bases" style="position: absolute; left: 565px; top: 250px; padding-left: 72px;" download="archivos/Bases.docx">Descargar bases</a>
+		<a class="btn btn-info bases" style="position: absolute; left: 795px; top: 150px; padding-left: 112px;"  data-toggle="modal" data-target="#formulario-idea" data-keyboard="true">Postular idea</a>
+		<a class="btn btn-info bases" style="position: absolute; left: 795px; top: 200px; padding-left: 72px;" data-toggle="modal" data-target="#formulario-desarrollo">Postular desarrollo</a>
+		<a class="btn btn-info bases" style="position: absolute; left: 795px; top: 250px;" data-toggle="modal" data-target="#formulario-crecimiento">Postular crecimiento</a>
+	-->
+		<div class="col-sm-3"></div>
+		<div class="col-sm-3"><a class="btn btn-info bases" href="archivos/Bases.docx" download="Bases.docx" style="margin-top: 200px; padding-left: 122px;">Ver bases</a>
+		<div class="row">
+			<a href="archivos/Bases.docx" class="btn btn-info bases" download="archivos/Bases.docx" style="padding-left: 72px; margin-top: 10px;">Descargar bases</a>
+		</div>
+		</div>
+		<div class="col-sm-3">
+			<a class="btn btn-info bases" style="padding-left: 112px; margin-top: 150px;"  data-toggle="modal" data-target="#formulario-idea" data-keyboard="true">Postular idea</a>
+			<div class="row">
+				<a class="btn btn-info bases" style="padding-left: 72px; margin-top: 10px;" data-toggle="modal" data-target="#formulario-desarrollo">Postular desarrollo</a>
+			</div>
+			<div class="row">
+				<a class="btn btn-info bases" style="margin-top: 10px;" data-toggle="modal" data-target="#formulario-crecimiento">Postular crecimiento</a>
+			</div>
+		</div>
+		
 	</div>
-	<div class="row" style="background-image: url('img/LOUSKYi.jpg'); padding-top: 80px; padding-bottom: 80px; color: #fff; position: relative;">
+	<div class="row" style="background-image: url('img/ref-12178793.png'); padding-top: 80px; padding-bottom: 80px; color: #fff; position: relative;">
 		<div style="position: relative; left: 700px;"><h1 >Contacto</h1>
-		<p>Escríbenos a jmujica@endeavor.cl</p>
-		&nbsp;
-		<a href="#" class="btn btn-info" role="button">ENVIAR CORREO</a>
+		<a href="#" class="btn btn-info" role="button" style="margin-top:50px;">Enviar Mensaje</a>
+		<p style="margin-top:60px;">Comparte esta convocatoria</p>
+		<p style="font-size: 28px; "><img src="img/Iic_RRSS_email.png" alt="" width="25" height="25"><img src="img/ic_RRSS_Linked_in.png" alt="" width="25" height="25"><img src="img/Ic_RRSS_ Facebook.png" alt="" width="25" height="25" >
+		<img src="img/ic_RRSS_Twitter.png" alt="" width="25" height="25" ></p>
 		</div>
 		
 		
 	</div>
+	<div class="row" style="padding: 60px;">
+		<div class="container">
+			<h1 style="color: rgb(30,152,138);">Preguntas Frecuentes</h1>
+			<hr style="color: rgb(30,152,138);">
+			<p ><b>¿Qué es la convocatoria “Mineralízate 2016”?</b><br>
+			Es una convocatoria abierta impulsada por Codelco Lab que busca en Chile aquellos proyectos que brinden soluciones innovadoras al país a través de nuevos usos en cobre, molibdeno y litio.</p>
+			<p ><b>¿Cuál es el objetivo del Programa?</b><br>
+			El objetivo de la convocatoria es incorporar los 15 proyectos seleccionados al portafolio de Codelco Lab y por ende al proceso de incubación o aceleración según la etapa a la que pertenezca el proyecto.</p>
+			<p ><b>¿A quién está dirigida la convocatoria?</b><br>
+			La convocatoria está dirigida a aquellas personas naturales o jurídicas, en particular aquellos emprendedores u organizaciones, en adelante los líderes de proyecto, con una idea, prototipo o producto que tenga alto potencial comercial, relacionado a un nuevo uso en cobre, molibdeno y litio. </p>
+			<p ><b>¿Cómo postular?</b><br>
+			Debes completar el formulario web que encontrarás en <a href="www.codelcolab.com/mineralizate2016">www.codelcolab.com/</a>mineralizate2016</p>
+			<p ><b>¿Hay algún tipo de costo por postular?</b><br>
+			No.</p>
+			<p ><b>¿Con qué me apoyarán si mi proyecto queda seleccionado?</b><br>
+			En todas las categorías, ya sea, Idea, Desarrollo o Crecimiento los proyectos tendrán acceso a:
+			
+			<ul>
+				<li>Fondos de inversión privado de venture capital e inversionistas ángeles.</li>
+				<li>Aporte monetario máximo de US$60,000.</li>
+				<li>Redes de expertos de las instituciones internacionales International Copper Association e International Molybdenum Association.</li>
+				<li>Apoyo comunicacional: plataformas de difusión, uso de marca Codelco Lab, participación de eventos masivos, utilización de pendones en ferias y más.</li>
+				<li>Asesoría de expertos para la estrategia de patentamiento.</li>
+				<li>Participar de talleres y mentorías que realice Codelco Lab a sus emprendedores.</li>
+				<li>Acceso a grandes compañías de la red que podrían ser pertinentes al proyecto.</li>
+				<li>Acceso a empresas de expertise técnica en desarrollo de tecnologías en base a cobre.</li>
+				<li>Podrán disponer de lugar de trabajo en las oficinas de Codelco Lab por un máximo de 6 meses.</li>
+			</ul>
+			Además, recibirás apoyo específico según la etapa en que se encuentre tu proyecto. Puedes ver el detalle de cada etapa en las bases de la convocatoria.
+			</p>
+			<p ><b>¿Cuáles son las etapas de la convocatoria?</b><br>
+			El proceso de selección está a cargo de Endeavor Chile y Codelco Lab. Contempla 4 etapas. </p>
+			<ul>
+				<li><b>Etapa n°1:</b><br>
+				Postulación online y primera selección según información en formulario. Para seleccionar los proyectos existen cuatro criterios de selección según categoría de proyecto. Revisar los criterios en las bases de convocatoria.
+				</li>
+				<li><b>Etapa n°2:</b><br>
+				Endeavor elaborará el ranking de empresas según la información recibida en el formulario. Endeavor podrá contactar a los líderes de proyectos para resolver dudas y obtener información adicional.
+				</li>
+				<li><b>Etapa n°3:</b><br>
+				Codelco Lab y Endeavor preseleccionarán a los 10 mejores proyectos de cada categoría que clasificarán a la final. Durante esta etapa se prepararán los equipos para la siguiente etapa.
+				</li>
+				<li><b>Etapa N°4:</b><br>
+				Etapa final de selección. Los 10 emprendedores finalistas de cada categoría presentarán su proyecto con formato de Elevator Pitch a jurado compuesto por miembros de Codelco Lab y de la Red Endeavor en Santiago. Cada equipo emprendedor deberá financiar la estadía y los costos de traslado. 
+				</li>
+			</ul>
+			</p>
+			<p ><b>¿Hay algún otro aspecto que debería saber antes de postular?</b><br>
+			Cada proyecto que entre al proceso de incubación de Codelco Lab, desde la etapa de concepto deberá firmar un acuerdo comercial que pacte la contribución monetaria que la incubadora aportará al proyecto a cambio de un royalty de las ventas y una opción de compra. Estos montos dependerán de las necesidades del proyecto. </p>
+			<p>Codelco Lab no toma propiedad en las compañías que incuba ni en su propiedad intelectual. Lo anterior tiene el objetivo de agilizar el proceso de penetración de mercado de los proyectos que impulsa. </p>
+			<p ><b>¿En caso de dudas a quién puedo contactar?</b><br>
+			Puedes contactar a José Pablo Mujica. Su email es jmujica@endeavor.cl.</p>
+		</div>
 	</div>
+	<div class="row" style="background-color: rgb(64, 64, 64); color: #fff; padding: 50px;">
+		<p>Codelco Lab, o Innovaciones en Cobre S.A, es una filial 100% Codelco constituida en el año 2008</p>
+		<p style="font-size: 28px; margin-top: 20px; margin-bottom: 20px;"><img src="img/Ic_RRSS_email_2.png" alt="" width="50" height="50">
+		<img src="img/Ic_RRSS_Linked_in_2.png" alt="" width="50" height="50"><img src="img/ic_RRSS_Facebook_2.png" alt="" width="60" height="60">
+		<img src="img/ic_RRSS_Twitter_2.png" alt="" width="60" height="60">
+		</p>
+		<p style="font-size: 12px;">Todos los derechos reservados Codelco Lab 2016<br>
+		Página web y video por <a href="http://www.feriapixel.cl/" style="color: #ed1e79">Feriapixel</a></p>
+	</div>
+	</div>
+<!-- Modal -->
+  <div class="modal fade" id="formulario-idea" role="dialog" tabindex="-1">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Formulario Idea</h4>
+        </div>
+        <div class="modal-body">
+          <form>
+    <div class="form-group">
+      <label for="nombre">Nombre completo del postulante:</label>
+      <input type="text" class="form-control" id="nombre" placeholder="Nombre">
+    </div>
+    <div class="form-group">
+      <label for="apellido">Apellido completo del postulante:</label>
+      <input type="text" class="form-control" id="apellido" placeholder="Apellido">
+    </div>
+    <div class="form-group">
+      <label for="rut">Cédula de Identidad</label>
+      <input type="text" class="form-control" id="rut" placeholder="Cédula de Indentidad">
+    </div>
+     <div class="form-group">
+      <label for="mail">E-mail</label>
+      <input type="text" class="form-control" id="mail" placeholder="E.mail">
+    </div>
+    <div class="form-group">
+      <label for="telefono">Teléfono</label>
+      <input type="text" class="form-control" id="telefono" placeholder="Teléfono">
+    </div>
+    <div class="form-group">
+      <label for="nombre-empresa">Nombre del emprendimiento o empresa:</label>
+      <input type="text" class="form-control" id="nombre-empresa" placeholder="Nombre de la Empresa">
+    </div>
+     <div class="form-group">
+      <label for="nombre-proyecto">Nombre del proyecto:</label>
+      <input type="text" class="form-control" id="nombre-proyecto" placeholder="Nombre del Proyecto">
+    </div>
+    <div class="form-group">
+	  <label for="sel1">¿A qué área pertenece el proyecto?:</label>
+	  <select class="form-control" id="sel1">
+	    <option>Alimentación Mundial</option>
+	    <option>Agua y Medio Ambiente</option>
+	    <option>Energía Electrónica</option>
+	    <option>Ciencias de la Vida</option>
+	    <option>Bienestar</option>
+	    <option>Otro</option>
+  	</select>
+	</div>
+	<div class="form-group">
+      <label for="cuentanosproyecto">Cuéntanos de tu proyecto. ¿Qué es lo que quieren hacer y cómo esperan lograrlo?</label>
+      <textarea class="form-control" rows="5" id="cuentanosproyecto"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="equipo">Equipo. ¿Quiénes componen el equipo? Escribir breve descripción de los integrantes involucrados en el proyecto</label>
+      <textarea class="form-control" rows="5" id="equipo"></textarea>
+    </div>
+     <div class="form-group">
+      <label for="experiencia">¿Cuáles son las capacidades distintivas de este equipo para el desarrollo del proyecto?</label>
+      <textarea class="form-control" rows="5" id="experiencia"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="dedicacion">¿Qué dedicación tiene cada miembro del equipo a este proyecto? ¿cuál es el rol de cada uno en el proyecto?</label>
+      <textarea class="form-control" rows="5" id="dedicacion"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="implementar">¿Qué problema resuelve con su idea? Dimensione el problema</label>
+      <textarea class="form-control" rows="5" id="implementar"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="antecedentes">¿Hay antecedentes científicos o comerciales que validen el proyecto?</label>
+      <textarea class="form-control" rows="5" id="antecedentes"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="novedad">¿Cuál es la principal novedad de la propuesta?</label>
+      <textarea class="form-control" rows="5" id="novedad"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="dificultad-desarrollo">¿por qué el cobre/litio/molibdeno tienen un rol central en la propuesta de valor de la idea?</label>
+      <textarea class="form-control" rows="5" id="dificultad-desarrollo"></textarea>
+    </div>
+     <div class="form-group">
+      <label for="soluciones">¿Existen soluciones similares actualmente en el mercado?</label>
+      <textarea class="form-control" rows="5" id="soluciones"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="dificultades">¿Cuáles son las principales dificultades para implementar el proyecto?¿Qué le gustaría lograr con el desarrollo del proyecto?</label>
+      <textarea class="form-control" rows="5" id="dificultades"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="necesidad">¿A quién le resuelve una necesidad?¿Quién es el cliente?</label>
+      <textarea class="form-control" rows="5" id="necesidad"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="tamano">¿Cuál es el tamaño de mercado que abarca su proyecto? </label>
+      <textarea class="form-control" rows="5" id="tamano"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="valor">¿Qué valor genera este proyecto a la industria que pertenece? ¿Ahorran costos? ¿Aumentan ingresos? ¿Aumentan eficiencias? Cuantifique</label>
+      <textarea class="form-control" rows="5" id="valor"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="capital">¿Necesitas capital para poder desarrollar tu idea? Indique cuánto y para qué</label>
+      <textarea class="form-control" rows="5" id="capital"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-default">Enviar</button>
+  </form>
+        </div>
+        
+      </div>
+      </div>
+   </div>
+<!-- Modal -->
+  <div class="modal fade" id="formulario-desarrollo" role="dialog" tabindex="-1">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Formulario Desarrollo</h4>
+        </div>
+        <div class="modal-body">
+          <form>
+    <div class="form-group">
+      <label for="nombre">Nombre completo del postulante:</label>
+      <input type="text" class="form-control" id="nombre" placeholder="Nombre">
+    </div>
+    <div class="form-group">
+      <label for="apellido">Apellido completo del postulante:</label>
+      <input type="text" class="form-control" id="apellido" placeholder="Apellido">
+    </div>
+    <div class="form-group">
+      <label for="rut">Cédula de Identidad</label>
+      <input type="text" class="form-control" id="rut" placeholder="Cédula de Indentidad">
+    </div>
+     <div class="form-group">
+      <label for="mail">E-mail</label>
+      <input type="text" class="form-control" id="mail" placeholder="E.mail">
+    </div>
+    <div class="form-group">
+      <label for="telefono">Teléfono</label>
+      <input type="text" class="form-control" id="telefono" placeholder="Teléfono">
+    </div>
+    <div class="form-group">
+      <label for="nombre-empresa">Nombre del emprendimiento o empresa:</label>
+      <input type="text" class="form-control" id="nombre-empresa" placeholder="Nombre de la Empresa">
+    </div>
+     <div class="form-group">
+      <label for="nombre-proyecto">Nombre del proyecto</label>
+      <input type="text" class="form-control" id="nombre-proyecto" placeholder="Nombre del Proyecto">
+    </div>
+    <div class="form-group">
+	  <label for="sel1">¿A qué área pertenece el proyecto?:</label>
+	  <select class="form-control" id="sel1">
+	    <option>Alimentación Mundial</option>
+	    <option>Agua y Medio Ambiente</option>
+	    <option>Energía Electrónica</option>
+	    <option>Ciencias de la Vida</option>
+	    <option>Bienestar</option>
+	    <option>Otro</option>
+  	</select>
+	</div>
+	<div class="form-group">
+      <label for="cuentanosproyecto">Descríbenos en términos generales tu proyecto. En qué consiste, estado de avance e hitos que haya alcanzado.</label>
+      <textarea class="form-control" rows="5" id="cuentanosproyecto"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="equipo">¿Qué problema de mercado resuelve tu proyecto? Dimensione el problema</label>
+      <textarea class="form-control" rows="5" id="equipo"></textarea>
+    </div>
+     <div class="form-group">
+      <label for="experiencia">¿A quién le resuelve una necesidad? ¿Quién es el cliente?</label>
+      <textarea class="form-control" rows="5" id="experiencia"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="dedicacion">¿Cuáles son los principales trabajos del cliente (Jobs to be done)? Es decir, qué es aquello que usted intenta resolver el cliente (Problemas que intentan resolver, necesidades que quieren satisfacer) (max 5)</label>
+      <textarea class="form-control" rows="5" id="dedicacion"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="crecimiento">¿qué preocupaciones o costos no deseados enfrenta el cliente al realizar su trabajo? (max 5)</label>
+      <textarea class="form-control" rows="5" id="crecimiento"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="validaciones">¿Han testeado el producto en el mercado o con potenciales clientes? ¿Qué resultados han obtenido?</label>
+      <textarea class="form-control" rows="5" id="validaciones"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="testeado">¿cuál es la propuesta de valor de tu proyecto?</label>
+      <textarea class="form-control" rows="5" id="testeado"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="novedad">¿por qué el cobre/litio/molibdeno es estructural en la propuesta de valor de tu proyecto?</label>
+      <textarea class="form-control" rows="5" id="novedad"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="soluciones">¿Qué valor genera este proyecto a la industria que pertenece? ¿Ahorran costos? ¿Aumentan ingresos? ¿Aumentan eficiencias? Cuantifique</label>
+      <textarea class="form-control" rows="5" id="soluciones"></textarea>
+    </div>
+	<div class="form-group">
+      <label for="dificultad-desarrollo">¿Qué otras soluciones buscan hacerse cargo del mismo problema?</label>
+      <textarea class="form-control" rows="5" id="dificultad-desarrollo"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="dificultades">¿Cuál es el tamaño de mercado que abarca su proyecto? </label>
+      <textarea class="form-control" rows="5" id="dificultades"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="necesidad">¿quiénes son los actores principales dentro del mercado en el que se desarrollará tu proyecto? </label>
+      <textarea class="form-control" rows="5" id="necesidad"></textarea>
+    </div>
+     <div class="form-group">
+      <label for="tamano">¿Cómo espera que se comercialice su proyecto?</label>
+      <textarea class="form-control" rows="5" id="tamano"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="valor">¿Cuáles son los principales desafíos/riesgos de mercado que debe resolver su proyecto para llegar al mercado?</label>
+      <textarea class="form-control" rows="5" id="valor"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="val-tec">¿Han desarrollado validaciones técnicas de su proyecto (pruebas de concepto, de laboratorio, en terreno u otros)? ¿Qué resultados han obtenido?</label>
+      <textarea class="form-control" rows="5" id="val-tec"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="des-tec">¿Cuáles son los desafíos tecnológicos de su proyecto?</label>
+      <textarea class="form-control" rows="5" id="des-tec"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="inv-pat">Su proyecto involucra patentes? En caso de que si, ¿en qué estado están? En caso de que no, ¿Cómo pretende protegerse?</label>
+      <textarea class="form-control" rows="5" id="inv-pat"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="dif-tec">¿Cuáles son las principales dificultades y riesgos tecnológicos para introducir su producto al mercado? ¿Cómo pretende resolverlas?</label>
+      <textarea class="form-control" rows="5" id="dif-tec"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="comp-eq">¿Quiénes componen el equipo? Escribir breve descripción de los integrantes</label>
+      <textarea class="form-control" rows="5" id="comp-eq"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="cap-eq">¿Cuáles son las capacidades distintivas de este equipo para el desarrollo del proyecto?, ¿Tienen experiencia en proyectos similares?, ¿Cuál es su experiencia con el elemento que utiliza?</label>
+      <textarea class="form-control" rows="5" id="cap-eq"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="ded-eq">¿Qué dedicación tiene cada miembro del equipo a este proyecto? ¿Cuál es el rol de cada uno en el proyecto?</label>
+      <textarea class="form-control" rows="5" id="ded-eq"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="partner">¿con qué otras redes de apoyo, partners cuentan?</label>
+      <textarea class="form-control" rows="5" id="partner"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="brechas">¿cuáles son las principales brechas que tiene su equipo para desarrollar los distintos aspectos de su proyecto?</label>
+      <textarea class="form-control" rows="5" id="brechas"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="palanca">¿Han apalancado recursos? Cómo?</label>
+      <textarea class="form-control" rows="5" id="palanca"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="cuant-cap">Cuantifique el capital que necesitaría su proyecto para la llegada al mercado y desglose las actividades que se necesitarían para ello. Sea objetivo y considere tanto aspectos técnicos como comerciales</label>
+      <textarea class="form-control" rows="5" id="cuant-cap"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-default">Enviar</button>
+  </form>
+        </div>
+        
+      </div>
+      </div>
+   </div>
+
+   <!-- Modal -->
+  <div class="modal fade" id="formulario-crecimiento" role="dialog" tabindex="-1">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Formulario Crecimiento</h4>
+        </div>
+        <div class="modal-body">
+          <form>
+    <div class="form-group">
+      <label for="nombre">Nombre completo del postulante</label>
+      <input type="text" class="form-control" id="nombre" placeholder="Nombre">
+    </div>
+    <div class="form-group">
+      <label for="apellido">Apellido completo del postulante:</label>
+      <input type="text" class="form-control" id="apellido" placeholder="Apellido">
+    </div>
+    <div class="form-group">
+      <label for="rut">Cedula de Identidad: </label>
+      <input type="text" class="form-control" id="rut" placeholder="Cédula de Indentidad">
+    </div>
+     <div class="form-group">
+      <label for="mail">E-mail</label>
+      <input type="text" class="form-control" id="mail" placeholder="E.mail">
+    </div>
+    <div class="form-group">
+      <label for="telefono">Teléfono</label>
+      <input type="text" class="form-control" id="telefono" placeholder="Teléfono">
+    </div>
+    <div class="form-group">
+      <label for="nombre-empresa">Nombre del emprendimiento o empresa:</label>
+      <input type="text" class="form-control" id="nombre-empresa" placeholder="Nombre de la Empresa">
+    </div>
+     <div class="form-group">
+      <label for="nombre-proyecto">Nombre del Proyecto</label>
+      <input type="text" class="form-control" id="nombre-proyecto" placeholder="Nombre del Proyecto">
+    </div>
+    <div class="form-group">
+	  <label for="sel1">¿A qué área pertenece el proyecto?:</label>
+	  <select class="form-control" id="sel1">
+	    <option>Alimentación Mundial</option>
+	    <option>Agua y Medio Ambiente</option>
+	    <option>Energía Electrónica</option>
+	    <option>Ciencias de la Vida</option>
+	    <option>Bienestar</option>
+	    <option>Otro</option>
+  	</select>
+	</div>
+	<div class="form-group">
+      <label for="cuentanosproyecto">Cuéntanos de tu proyecto ¿De qué se trata?  ¿Hace cuánto está en el mercado? ¿Cuántas ventas tiene? </label>
+      <textarea class="form-control" rows="5" id="cuentanosproyecto"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="equipo">¿Qué problema de mercado resuelve tu proyecto? Dimensione el problema</label>
+      <textarea class="form-control" rows="5" id="equipo"></textarea>
+    </div>
+     <div class="form-group">
+      <label for="experiencia">¿Cuál es el estado actual del proyecto?</label>
+      <textarea class="form-control" rows="5" id="experiencia"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="dedicacion">¿Cuál es el modelo de negocios de su empresa? ¿Cómo generan ingresos?</label>
+      <textarea class="form-control" rows="5" id="dedicacion"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="validaciones">¿A quién le resuelve una necesidad? ¿Quién es el cliente? </label>
+      <textarea class="form-control" rows="5" id="validaciones"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="patentado">¿Cuáles son los principales trabajos del cliente (Jobs to be done)? Es decir, qué es aquello que usted intenta resolver el cliente (Problemas que intentan resolver, necesidades que quieren satisfacer) (max 5)</label>
+      <textarea class="form-control" rows="5" id="patentado"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="testeado">¿qué preocupaciones o costos no deseados enfrenta el cliente al realizar su trabajo? (max 5)</label>
+      <textarea class="form-control" rows="5" id="testeado"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="soluciones">¿Cómo el cliente utiliza su producto? ¿Cada cuánto lo compra?</label>
+      <textarea class="form-control" rows="5" id="soluciones"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="dificultades">¿Cuál es la propuesta de valor de tu proyecto?</label>
+      <textarea class="form-control" rows="5" id="dificultades"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="tamano">¿por qué el cobre/litio/molibdeno es estructural en la propuesta de valor de tu proyecto?</label>
+      <textarea class="form-control" rows="5" id="tamano"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="valor">¿Qué valor genera este proyecto en la industria que pertenece? ¿Ahorran costos? ¿Aumentan ingresos? ¿Aumentan eficiencias? Cuantifique</label>
+      <textarea class="form-control" rows="5" id="valor"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="modelo">Cuente las proyecciones de ventas a 3 años y tasa de crecimiento.</label>
+      <textarea class="form-control" rows="5" id="modelo"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="crecimiento">¿Cuál es el tamaño de mercado que abarca su proyecto?</label>
+      <textarea class="form-control" rows="5" id="crecimiento"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="plan-comercial">¿quiénes son los actores principales de su mercado? </label>
+      <textarea class="form-control" rows="5" id="plan-comercial"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="capital">¿Cuáles son los principales desafíos del mercado?</label>
+      <textarea class="form-control" rows="5" id="capital"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="comp">Identifique sus competidores y explique cómo se diferencia de ellos</label>
+      <textarea class="form-control" rows="5" id="comp"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="val-tec">¿Cuáles han sido las validaciones técnicas que demuestran el desempeño del producto? Cuente los resultados</label>
+      <textarea class="form-control" rows="5" id="val-tec"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="invol-pat">¿Su proyecto involucra patentes? En caso de que si, ¿en qué estado están? En caso de que no, ¿Cómo pretende protegerse?</label>
+      <textarea class="form-control" rows="5" id="invol-pat"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="robust">¿Qué tipo de validaciones robustecería el proyecto?</label>
+      <textarea class="form-control" rows="5" id="robust"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="comp-eq">¿Quiénes componen el equipo? breve descripción de los integrantes.</label>
+      <textarea class="form-control" rows="5" id="comp-eq"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="cap-dist">¿Cuáles son las capacidades distintivas de este equipo para el desarrollo del proyecto?, ¿Tienen experiencia en proyectos similares?, ¿Cuál es su experiencia con el elemento que utiliza?</label>
+      <textarea class="form-control" rows="5" id="cap-dist"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="dedic">¿Cuáles son las capacidades distintivas de este equipo para el desarrollo del proyecto?, ¿Tienen experiencia en proyectos similares?, ¿Cuál es su experiencia con el elemento que utiliza?</label>
+      <textarea class="form-control" rows="5" id="dedic"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="partner">¿con qué otras redes de apoyo, partners cuentan?</label>
+      <textarea class="form-control" rows="5" id="partner"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="brechas">¿cuáles son las principales brechas que tiene su equipo para desarrollar los distintos aspectos de su proyecto?</label>
+      <textarea class="form-control" rows="5" id="brechas"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="palanca">¿Han apalancado recursos? ¿Cómo?</label>
+      <textarea class="form-control" rows="5" id="palanca"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="escalamiento">Cuantifique el capital que necesita su proyecto para el escalamiento comercial y sus respectivas actividades. Sea objetivo y considere tanto aspectos técnicos como comerciales</label>
+      <textarea class="form-control" rows="5" id="escalamiento"></textarea>
+    </div>
+    <button type="submit" class="btn btn-default">Enviar</button>
+  </form>
+        </div>
+        
+      </div>
+      </div>
+   </div>
+
+ <!-- Modal -->
+<div id="videomodal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content
+    <div class="modal-content" style="height: 20px; position: absolute; top: 100px;">
+      <iframe src="https://player.vimeo.com/video/185310957" width="640" height="361" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<p><a href="https://vimeo.com/185310957">Codelco_Lab 1_LT.mp4</a> from <a href="https://vimeo.com/user40824631">ITV-World</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+
+  </div>
+  -->
+</div>
 <script>
 $('#myCarousel').carousel({
-    interval: 4000
+                interval: 4000
+            });
+            var itemCount = 0;
+            var elementlength = $('.carousel .item').length;
+            itemArray = [];
+            //var ItemWidthCalc = 100 / elementlength;
+
+            //$('.carousel .item > div').each(function() {
+               // $(this).css({'width': ItemWidthCalc + "%"});
+            //});
+            $('.carousel .item').each(function() {
+                var clonethis = $(this).clone().html();
+                itemArray.push(clonethis);
+            });
+            $('.carousel .item').each(function() {
+                itemCount = $(this).index();
+                for (i = 0; i < elementlength - 1; i++)
+                {
+                    itemCount++;
+                    if (itemCount > elementlength - 1)
+                    {
+                        itemCount = 0;
+
+                        $(this).append(itemArray[itemCount]);
+
+                    }
+                    else
+                    {
+
+                        $(this).append(itemArray[itemCount]);
+
+                    }
+
+                }
+
+            });
+</script>
+<script>
+	$(document).on('click', 'a', function(event){
+    event.preventDefault();
+
+    $('html, body').animate({
+        scrollTop: $( $.attr(this, 'href') ).offset().top
+    }, 500);
 });
-
-$('.carousel .item').each(function () {
-    var next = $(this).next();
-    if (!next.length) {
-        next = $(this).siblings(':first');
-    }
-    next.children(':first-child').clone().appendTo($(this));
-
-    for (var i = 0; i < 4; i++) {
-        next = next.next();
-        if (!next.length) {
-            next = $(this).siblings(':first');
-        }
-
-        next.children(':first-child').clone().appendTo($(this));
-    }
-});	
 </script>
 </body>
 </html>
