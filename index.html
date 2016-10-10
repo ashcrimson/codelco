@@ -6,12 +6,73 @@
 	  <meta name="viewport" content="width=device-width, initial-scale=1">
 	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
-	  <link rel="stylesheet" href="css/style.css">
+	  
 	  <script src="js/video.js"></script>
 	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 	<style>
+	@font-face {
+	    font-family: Myfont;
+	    src: url(Helvetica_LT_43_Light_Extended.ttf);
+	}
+
+	@font-face {
+	    font-family: Myfontdos;
+	    src: url(Gill_Sans_MT_Bold.ttf);
+	}
+		video { 
+	    position: relative;
+	    top: 450px;
+	    left: 50%;
+	    min-width: 100%;
+	    min-height: 100%;
+	    width: auto;
+	    height: auto;
+	    z-index: -100;
+	    transform: translateX(-50%) translateY(-50%);
+	 background: url(img/hugochavez2.jpg) no-repeat;
+	  background-size: cover;
+	  transition: 1s opacity;
+	}
+
+	.stopfade { 
+   		opacity: .5;
+	}
+
+	#polina { 
+
+		  font-weight:100; 
+		  position: absolute;
+		  color: white;
+		  padding: 2rem;
+		  width: 100%;
+		  font-size: 1.0rem;
+		  top: 132px;
+		  left: 0px;
+		  height: 0px;
+		}
+
+	#polina button { 
+		  display: block;
+		  width: 80%;
+		  padding: .4rem;
+		  border: none; 
+		  margin: 1rem auto; 
+		  font-size: 1.3rem;
+		  background: rgba(255,255,255,0.23);
+		  color: #fff;
+		  border-radius: 3px; 
+		  cursor: pointer;
+		  transition: .3s background;
+		}
+
+	#polina button:hover { 
+   		background: rgba(0,0,0,0.5);
+	}
+
+		.grow { transition: all .2s ease-in-out; }
+		.grow:hover { transform: scale(1.1); }
 		.iconos {
 			color: red rgb(47,47,47);
 			font-size: 16pt;
@@ -143,17 +204,77 @@
 		.grow { transition: all .2s ease-in-out; }
 		.grow:hover { transform: scale(1.8); }
 
+		.icon-bar {
+  color: black;
+}
+
+.carousel-inner .active.left {
+    left: -16.6%;
+}
+.carousel-inner .next {
+    left: 16.6%;
+}
+.carousel-control.left, .carousel-control.right {
+    background-image:none; 
+}
+
+.agrandar {
+  border: 1px solid #fff; 
+  color: #fff; 
+  transition: padding 0.5s; 
+  -webkit-transition: padding 0.5s;
+}
+
+.agrandar:hover {
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+.agranda-imagen:hover {
+  width: 200px;
+}
+
+.agranda-icono {
+  color: #000; 
+  background-color: #fff; 
+  border-color: #fff; transition: padding 0.5s; 
+  -webkit-transition: padding 0.5s;
+}
+
+.agranda-icono:hover {
+  padding: 50px;
+  font-size: 50px;
+}
+
+.mineralizate {
+	margin-left: 80px;
+}
+
+.conectate {
+	font-size: 18px;
+}
+
 		@media screen and (max-width: 600px) {
     		h1 {
-        		font-size: 16px;
+        		font-size: 12px;
     		}
 
 	    	.portada {
-				position: static;
+				
+				width: 200px;
+				height: 100px;
+				display: none;
+				
 			}
 
 			#polina {
-				margin-top: 50px;
+				color: black;
+				position: relative;
+				top: -200px;
+				font-size: 10px;
+				width: 200px;
+				
+				
 			}
 
 			#boton-play {
@@ -174,7 +295,9 @@
 			    left: 50%;
 	}
 
+
 	</style>
+
 </head>
 <body>
 	<header>
@@ -203,21 +326,22 @@
 
 	</header>
 	<div class="container-fluid">
+
 	<div class="row portada">
-		<video  poster="img/IMG-20161007-WA0000.jpg" id="bgvid" playsinline autoplay muted loop>
-		  <!-- WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button  -->
+		<video  poster="img/hugochavez2.jpg" id="bgvid" playsinline autoplay muted loop>
+		  
 		<source src="videos/Vbg 1_portada_2_ webmsd.webm" type="video/webm">
 		<source src="videos/Vbg 1 portada 2 mp4.mp4" type="video/mp4">
 		</video>
 		<div id="polina">
 		<div class="col-sm-10">
-			<div style="margin-left: 80px;">
+			<div class="mineralizate">
 				<h1 >MINERALÍZATE 2016 <br>
 				lleva al mercado tu idea<br>
 				o proyecto basado en nuevos usos<br>
 				del cobre, molibdeno y litio.</h1>
 				
-				<p style="font-size: 18px;">Conéctate con expertos en investigación, desarrollo, negocios y más.<br>
+				<p class="conectate">Conéctate con expertos en investigación, desarrollo, negocios y más.<br>
 				Postula hasta el 04 de Noviembre en una de las 3 categorías:<br>
 				Idea, Desarrollo o Crecimiento.</p>
 				<div style="margin-top: 30px;">
@@ -227,7 +351,8 @@
 			</div>
 			</div>
 			<div class="col-sm-2">
-			<a href="#" data-toggle="modal" data-target="#videomodal"><img src="img/boton-play.png"  alt="" id="boton-play" style=""></a></div>
+			<a href="#" data-toggle="modal" data-target="#videomodal"><img src="img/boton-play.png"  alt="" id="boton-play" style=""></a>
+			</div>
 			<div class="cuadro-gris">
 				<h1>Investigación + Desarrollo + Innovación</h1>
 				<p>Creemos que el mundo puede funcionar mejor gracias<br>
@@ -381,7 +506,7 @@ Hospital de Urgencia <br>Asistencia Pública</h4>
 		<div class="container">
 			<div id="objetivos" class="row" style="padding: 50px;">
 				<div class="col-sm-6" style="text-align: right;">
-					<img src="img/Logo_Codelco_Lab_PNG-01.png" style="width: 320px; height: 256px;" alt="">
+					<img src="img/Logo_Codelco_Lab_PNG-01.png" style="width: 320px; height: 256px;" class="image-responsive" alt="">
 				</div>
 				<div class="col-sm-6 queescodelcolab" style="text-align: left;">
 					<h1>¿Qué es Codelco Lab?</h1>
@@ -418,7 +543,7 @@ Hospital de Urgencia <br>Asistencia Pública</h4>
 		<a class="btn btn-info bases" style="position: absolute; left: 795px; top: 250px;" data-toggle="modal" data-target="#formulario-crecimiento">Postular crecimiento</a>
 	-->
 		<div class="col-sm-3"></div>
-		<div class="col-sm-3"><a class="btn btn-info bases" href="archivos/Bases.docx" download="Bases.docx" style="margin-top: 200px; padding-left: 122px;">Ver bases</a>
+		<div class="col-sm-3"><a class="btn btn-info bases" href="archivos/Bases.pdf"  style="margin-top: 200px; padding-left: 122px;">Ver bases</a>
 		<div class="row">
 			<a href="archivos/Bases.docx" class="btn btn-info bases" download="archivos/Bases.docx" style="padding-left: 72px; margin-top: 10px;">Descargar bases</a>
 		</div>
@@ -434,31 +559,43 @@ Hospital de Urgencia <br>Asistencia Pública</h4>
 		</div>
 		
 	</div>
-	<div class="row" style="background-image: url('img/ref-12178793.png'); padding-top: 80px; padding-bottom: 80px; color: #fff; position: relative;">
+	<!--<div class="row" style="background-image: url('img/ref-12178793.png'); padding-top: 80px; padding-bottom: 80px; color: #fff; position: relative;">
 		<div style="position: relative; left: 700px;"><h1 >Contacto</h1>
-		<a href="#" class="btn btn-info" role="button" style="margin-top:50px;">Enviar Mensaje</a>
+		<a href="mailto:jmujica@endeavor.cl?Subject=Contacto%20Mineralízate2016" class="btn btn-info" role="button" style="margin-top:50px;">Enviar Mensaje</a>
 		<p style="margin-top:60px;">Comparte esta convocatoria</p>
 		<p style="font-size: 28px; "><img src="img/Iic_RRSS_email.png" alt="" width="25" height="25"><img src="img/ic_RRSS_Linked_in.png" alt="" width="25" height="25"><img src="img/Ic_RRSS_ Facebook.png" alt="" width="25" height="25" >
 		<img src="img/ic_RRSS_Twitter.png" alt="" width="25" height="25" ></p>
 		</div>
 		
 		
+	</div> -->
+	<div class="row" style="background-image: url('img/ref-12178793.png'); padding-top: 80px; padding-bottom: 80px; color: #fff;">
+	<div class="col-sm-4"></div>
+	<div class="col-sm-4" style="text-align: center;">
+		<h1 >Contacto</h1>
+		<a href="mailto:jmujica@endeavor.cl?Subject=Contacto%20Mineralízate2016" class="btn btn-info" role="button" style="margin-top:50px;">Enviar Mensaje</a>
+		<p style="margin-top:60px;">Comparte esta convocatoria</p>
+		<p style="font-size: 28px; "><img src="img/Iic_RRSS_email.png" alt="" width="25" height="25"><img src="img/ic_RRSS_Linked_in.png" alt="" width="25" height="25"><img src="img/Ic_RRSS_ Facebook.png" alt="" width="25" height="25" >
+		<img src="img/ic_RRSS_Twitter.png" alt="" width="25" height="25" ></p>
+	</div>
+	<div class="col-sm-4"></div>
+		
 	</div>
 	<div class="row" style="padding: 60px;">
 		<div class="container">
 			<h1 style="color: rgb(30,152,138);">Preguntas Frecuentes</h1>
 			<hr style="color: rgb(30,152,138);">
-			<p ><b>¿Qué es la convocatoria “Mineralízate 2016”?</b><br>
+			<p ><b style="font-weight: 900;">¿Qué es la convocatoria “Mineralízate 2016”?</b><br>
 			Es una convocatoria abierta impulsada por Codelco Lab que busca en Chile aquellos proyectos que brinden soluciones innovadoras al país a través de nuevos usos en cobre, molibdeno y litio.</p>
-			<p ><b>¿Cuál es el objetivo del Programa?</b><br>
+			<p ><b style="font-weight: 900;">¿Cuál es el objetivo del Programa?</b><br>
 			El objetivo de la convocatoria es incorporar los 15 proyectos seleccionados al portafolio de Codelco Lab y por ende al proceso de incubación o aceleración según la etapa a la que pertenezca el proyecto.</p>
-			<p ><b>¿A quién está dirigida la convocatoria?</b><br>
+			<p ><b style="font-weight: 900;">¿A quién está dirigida la convocatoria?</b><br>
 			La convocatoria está dirigida a aquellas personas naturales o jurídicas, en particular aquellos emprendedores u organizaciones, en adelante los líderes de proyecto, con una idea, prototipo o producto que tenga alto potencial comercial, relacionado a un nuevo uso en cobre, molibdeno y litio. </p>
-			<p ><b>¿Cómo postular?</b><br>
+			<p ><b style="font-weight: 900;">¿Cómo postular?</b><br>
 			Debes completar el formulario web que encontrarás en <a href="www.codelcolab.com/mineralizate2016">www.codelcolab.com/</a>mineralizate2016</p>
-			<p ><b>¿Hay algún tipo de costo por postular?</b><br>
+			<p ><b style="font-weight: 900;">¿Hay algún tipo de costo por postular?</b><br>
 			No.</p>
-			<p ><b>¿Con qué me apoyarán si mi proyecto queda seleccionado?</b><br>
+			<p ><b style="font-weight: 900;">¿Con qué me apoyarán si mi proyecto queda seleccionado?</b><br>
 			En todas las categorías, ya sea, Idea, Desarrollo o Crecimiento los proyectos tendrán acceso a:
 			
 			<ul>
@@ -474,28 +611,28 @@ Hospital de Urgencia <br>Asistencia Pública</h4>
 			</ul>
 			Además, recibirás apoyo específico según la etapa en que se encuentre tu proyecto. Puedes ver el detalle de cada etapa en las bases de la convocatoria.
 			</p>
-			<p ><b>¿Cuáles son las etapas de la convocatoria?</b><br>
+			<p ><b style="font-weight: 900;">¿Cuáles son las etapas de la convocatoria?</b><br>
 			El proceso de selección está a cargo de Endeavor Chile y Codelco Lab. Contempla 4 etapas. </p>
 			<ul>
-				<li><b>Etapa n°1:</b><br>
+				<li><b style="font-weight: 900;">Etapa n°1:</b><br>
 				Postulación online y primera selección según información en formulario. Para seleccionar los proyectos existen cuatro criterios de selección según categoría de proyecto. Revisar los criterios en las bases de convocatoria.
 				</li>
-				<li><b>Etapa n°2:</b><br>
+				<li><b style="font-weight: 900;">Etapa n°2:</b><br>
 				Endeavor elaborará el ranking de empresas según la información recibida en el formulario. Endeavor podrá contactar a los líderes de proyectos para resolver dudas y obtener información adicional.
 				</li>
-				<li><b>Etapa n°3:</b><br>
+				<li><b style="font-weight: 900;">Etapa n°3:</b><br>
 				Codelco Lab y Endeavor preseleccionarán a los 10 mejores proyectos de cada categoría que clasificarán a la final. Durante esta etapa se prepararán los equipos para la siguiente etapa.
 				</li>
-				<li><b>Etapa N°4:</b><br>
+				<li><b style="font-weight: 900;">Etapa N°4:</b><br>
 				Etapa final de selección. Los 10 emprendedores finalistas de cada categoría presentarán su proyecto con formato de Elevator Pitch a jurado compuesto por miembros de Codelco Lab y de la Red Endeavor en Santiago. Cada equipo emprendedor deberá financiar la estadía y los costos de traslado. 
 				</li>
 			</ul>
 			</p>
-			<p ><b>¿Hay algún otro aspecto que debería saber antes de postular?</b><br>
+			<p ><b style="font-weight: 900;">¿Hay algún otro aspecto que debería saber antes de postular?</b><br>
 			Cada proyecto que entre al proceso de incubación de Codelco Lab, desde la etapa de concepto deberá firmar un acuerdo comercial que pacte la contribución monetaria que la incubadora aportará al proyecto a cambio de un royalty de las ventas y una opción de compra. Estos montos dependerán de las necesidades del proyecto. </p>
 			<p>Codelco Lab no toma propiedad en las compañías que incuba ni en su propiedad intelectual. Lo anterior tiene el objetivo de agilizar el proceso de penetración de mercado de los proyectos que impulsa. </p>
-			<p ><b>¿En caso de dudas a quién puedo contactar?</b><br>
-			Puedes contactar a José Pablo Mujica. Su email es jmujica@endeavor.cl.</p>
+			<p ><b style="font-weight: 900;">¿En caso de dudas a quién puedo contactar?</b><br>
+			Puedes contactar a José Pablo Mujica. Su email es <a href="mailto:jmujica@endeavor.cl?Subject=Contacto%20Mineralízate2016">jmujica@endeavor.cl.</a></p>
 		</div>
 	</div>
 	<div class="row" style="background-color: rgb(64, 64, 64); color: #fff; padding: 50px;">
@@ -519,101 +656,101 @@ Hospital de Urgencia <br>Asistencia Pública</h4>
           <h4 class="modal-title">Formulario Idea</h4>
         </div>
         <div class="modal-body">
-          <form>
-    <div class="form-group">
-      <label for="nombre">Nombre completo del postulante:</label>
-      <input type="text" class="form-control" id="nombre" placeholder="Nombre">
-    </div>
-    <div class="form-group">
-      <label for="apellido">Apellido completo del postulante:</label>
-      <input type="text" class="form-control" id="apellido" placeholder="Apellido">
-    </div>
-    <div class="form-group">
-      <label for="rut">Cédula de Identidad</label>
-      <input type="text" class="form-control" id="rut" placeholder="Cédula de Indentidad">
-    </div>
-     <div class="form-group">
-      <label for="mail">E-mail</label>
-      <input type="text" class="form-control" id="mail" placeholder="E.mail">
-    </div>
-    <div class="form-group">
-      <label for="telefono">Teléfono</label>
-      <input type="text" class="form-control" id="telefono" placeholder="Teléfono">
-    </div>
-    <div class="form-group">
-      <label for="nombre-empresa">Nombre del emprendimiento o empresa:</label>
-      <input type="text" class="form-control" id="nombre-empresa" placeholder="Nombre de la Empresa">
-    </div>
-     <div class="form-group">
-      <label for="nombre-proyecto">Nombre del proyecto:</label>
-      <input type="text" class="form-control" id="nombre-proyecto" placeholder="Nombre del Proyecto">
-    </div>
-    <div class="form-group">
-	  <label for="sel1">¿A qué área pertenece el proyecto?:</label>
-	  <select class="form-control" id="sel1">
-	    <option>Alimentación Mundial</option>
-	    <option>Agua y Medio Ambiente</option>
-	    <option>Energía Electrónica</option>
-	    <option>Ciencias de la Vida</option>
-	    <option>Bienestar</option>
-	    <option>Otro</option>
-  	</select>
+         <form action="idea.php" method="post">
+	    <div class="form-group">
+	      <label for="nombre">Nombre completo del postulante:</label>
+	      <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre">
+	    </div>
+	    <div class="form-group">
+	      <label for="apellido">Apellido completo del postulante:</label>
+	      <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Apellido">
+	    </div>
+	    <div class="form-group">
+	      <label for="rut">Cédula de Identidad</label>
+	      <input type="text" class="form-control" id="rut" name="rut" placeholder="Cédula de Indentidad">
+	    </div>
+	     <div class="form-group">
+	      <label for="mail">E-mail</label>
+	      <input type="text" class="form-control" id="mail" name="email" placeholder="E.mail">
+	    </div>
+	    <div class="form-group">
+	      <label for="telefono">Teléfono</label>
+	      <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Teléfono">
+	    </div>
+	    <div class="form-group">
+	      <label for="nombre-empresa">Nombre del emprendimiento o empresa:</label>
+	      <input type="text" class="form-control" id="nombre_empresa" name="nombre_empresa" placeholder="Nombre de la Empresa">
+	    </div>
+	     <div class="form-group">
+	      <label for="nombre-proyecto">Nombre del proyecto:</label>
+	      <input type="text" class="form-control" id="nombre_proyecto" name="nombre_proyecto" placeholder="Nombre del Proyecto">
+	    </div>
+	    <div class="form-group">
+		  <label for="sel1">¿A qué área pertenece el proyecto?:</label>
+		  <select class="form-control" id="area_proyecto" name="area_proyecto">
+		    <option>Alimentación Mundial</option>
+		    <option>Agua y Medio Ambiente</option>
+		    <option>Energía Electrónica</option>
+		    <option>Ciencias de la Vida</option>
+		    <option>Bienestar</option>
+		    <option>Otro</option>
+	  	</select>
 	</div>
 	<div class="form-group">
       <label for="cuentanosproyecto">Cuéntanos de tu proyecto. ¿Qué es lo que quieren hacer y cómo esperan lograrlo?</label>
-      <textarea class="form-control" rows="5" id="cuentanosproyecto"></textarea>
+      <textarea class="form-control" rows="5" id="cuentanos_proyecto" name="cuentanos_proyecto"></textarea>
     </div>
     <div class="form-group">
       <label for="equipo">Equipo. ¿Quiénes componen el equipo? Escribir breve descripción de los integrantes involucrados en el proyecto</label>
-      <textarea class="form-control" rows="5" id="equipo"></textarea>
+      <textarea class="form-control" rows="5" id="equipo" name="equipo"></textarea>
     </div>
      <div class="form-group">
       <label for="experiencia">¿Cuáles son las capacidades distintivas de este equipo para el desarrollo del proyecto?</label>
-      <textarea class="form-control" rows="5" id="experiencia"></textarea>
+      <textarea class="form-control" rows="5" id="experiencia" name="experiencia"></textarea>
     </div>
     <div class="form-group">
       <label for="dedicacion">¿Qué dedicación tiene cada miembro del equipo a este proyecto? ¿cuál es el rol de cada uno en el proyecto?</label>
-      <textarea class="form-control" rows="5" id="dedicacion"></textarea>
+      <textarea class="form-control" rows="5" id="dedicacion" name="dedicacion"></textarea>
     </div>
     <div class="form-group">
       <label for="implementar">¿Qué problema resuelve con su idea? Dimensione el problema</label>
-      <textarea class="form-control" rows="5" id="implementar"></textarea>
+      <textarea class="form-control" rows="5" id="implementar" name="implementar"></textarea>
     </div>
     <div class="form-group">
       <label for="antecedentes">¿Hay antecedentes científicos o comerciales que validen el proyecto?</label>
-      <textarea class="form-control" rows="5" id="antecedentes"></textarea>
+      <textarea class="form-control" rows="5" id="antecedentes" name="antecedentes"></textarea>
     </div>
     <div class="form-group">
       <label for="novedad">¿Cuál es la principal novedad de la propuesta?</label>
-      <textarea class="form-control" rows="5" id="novedad"></textarea>
+      <textarea class="form-control" rows="5" id="novedad" name="novedad"></textarea>
     </div>
     <div class="form-group">
       <label for="dificultad-desarrollo">¿por qué el cobre/litio/molibdeno tienen un rol central en la propuesta de valor de la idea?</label>
-      <textarea class="form-control" rows="5" id="dificultad-desarrollo"></textarea>
+      <textarea class="form-control" rows="5" id="dificultad_desarrollo" name="dificultad_desarrollo"></textarea>
     </div>
      <div class="form-group">
       <label for="soluciones">¿Existen soluciones similares actualmente en el mercado?</label>
-      <textarea class="form-control" rows="5" id="soluciones"></textarea>
+      <textarea class="form-control" rows="5" id="soluciones" name="soluciones"></textarea>
     </div>
     <div class="form-group">
       <label for="dificultades">¿Cuáles son las principales dificultades para implementar el proyecto?¿Qué le gustaría lograr con el desarrollo del proyecto?</label>
-      <textarea class="form-control" rows="5" id="dificultades"></textarea>
+      <textarea class="form-control" rows="5" id="dificultades" name="dificultades"></textarea>
     </div>
     <div class="form-group">
       <label for="necesidad">¿A quién le resuelve una necesidad?¿Quién es el cliente?</label>
-      <textarea class="form-control" rows="5" id="necesidad"></textarea>
+      <textarea class="form-control" rows="5" id="necesidad" name="necesidad"></textarea>
     </div>
     <div class="form-group">
       <label for="tamano">¿Cuál es el tamaño de mercado que abarca su proyecto? </label>
-      <textarea class="form-control" rows="5" id="tamano"></textarea>
+      <textarea class="form-control" rows="5" id="tamano" name="tamano"></textarea>
     </div>
     <div class="form-group">
       <label for="valor">¿Qué valor genera este proyecto a la industria que pertenece? ¿Ahorran costos? ¿Aumentan ingresos? ¿Aumentan eficiencias? Cuantifique</label>
-      <textarea class="form-control" rows="5" id="valor"></textarea>
+      <textarea class="form-control" rows="5" id="valor" name="valor"></textarea>
     </div>
     <div class="form-group">
       <label for="capital">¿Necesitas capital para poder desarrollar tu idea? Indique cuánto y para qué</label>
-      <textarea class="form-control" rows="5" id="capital"></textarea>
+      <textarea class="form-control" rows="5" id="capital" name="capital"></textarea>
     </div>
 
     <button type="submit" class="btn btn-default">Enviar</button>
@@ -634,38 +771,38 @@ Hospital de Urgencia <br>Asistencia Pública</h4>
           <h4 class="modal-title">Formulario Desarrollo</h4>
         </div>
         <div class="modal-body">
-          <form>
+          <form action="desarrollo.php" method="post">
     <div class="form-group">
       <label for="nombre">Nombre completo del postulante:</label>
-      <input type="text" class="form-control" id="nombre" placeholder="Nombre">
+      <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre">
     </div>
     <div class="form-group">
       <label for="apellido">Apellido completo del postulante:</label>
-      <input type="text" class="form-control" id="apellido" placeholder="Apellido">
+      <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Apellido">
     </div>
     <div class="form-group">
       <label for="rut">Cédula de Identidad</label>
-      <input type="text" class="form-control" id="rut" placeholder="Cédula de Indentidad">
+      <input type="text" class="form-control" id="rut" name="rut" placeholder="Cédula de Indentidad">
     </div>
      <div class="form-group">
       <label for="mail">E-mail</label>
-      <input type="text" class="form-control" id="mail" placeholder="E.mail">
+      <input type="text" class="form-control" id="mail" name="mail" placeholder="E-mail">
     </div>
     <div class="form-group">
       <label for="telefono">Teléfono</label>
-      <input type="text" class="form-control" id="telefono" placeholder="Teléfono">
+      <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Teléfono">
     </div>
     <div class="form-group">
       <label for="nombre-empresa">Nombre del emprendimiento o empresa:</label>
-      <input type="text" class="form-control" id="nombre-empresa" placeholder="Nombre de la Empresa">
+      <input type="text" class="form-control" id="nombre_empresa" name="nombre_empresa" placeholder="Nombre de la Empresa">
     </div>
      <div class="form-group">
       <label for="nombre-proyecto">Nombre del proyecto</label>
-      <input type="text" class="form-control" id="nombre-proyecto" placeholder="Nombre del Proyecto">
+      <input type="text" class="form-control" id="nombre_proyecto" name="nombre_proyecto" placeholder="Nombre del Proyecto">
     </div>
     <div class="form-group">
-	  <label for="sel1">¿A qué área pertenece el proyecto?:</label>
-	  <select class="form-control" id="sel1">
+	  <label for="sel1" name="area_proyecto">¿A qué área pertenece el proyecto?:</label>
+	  <select class="form-control" id="sel1" name="area_proyecto">
 	    <option>Alimentación Mundial</option>
 	    <option>Agua y Medio Ambiente</option>
 	    <option>Energía Electrónica</option>
@@ -676,103 +813,103 @@ Hospital de Urgencia <br>Asistencia Pública</h4>
 	</div>
 	<div class="form-group">
       <label for="cuentanosproyecto">Descríbenos en términos generales tu proyecto. En qué consiste, estado de avance e hitos que haya alcanzado.</label>
-      <textarea class="form-control" rows="5" id="cuentanosproyecto"></textarea>
+      <textarea class="form-control" rows="5" id="cuentanosproyecto" name="cuentanosproyecto"></textarea>
     </div>
     <div class="form-group">
       <label for="equipo">¿Qué problema de mercado resuelve tu proyecto? Dimensione el problema</label>
-      <textarea class="form-control" rows="5" id="equipo"></textarea>
+      <textarea class="form-control" rows="5" id="equipo" name="equipo"></textarea>
     </div>
      <div class="form-group">
       <label for="experiencia">¿A quién le resuelve una necesidad? ¿Quién es el cliente?</label>
-      <textarea class="form-control" rows="5" id="experiencia"></textarea>
+      <textarea class="form-control" rows="5" id="experiencia" name="experiencia"></textarea>
     </div>
     <div class="form-group">
       <label for="dedicacion">¿Cuáles son los principales trabajos del cliente (Jobs to be done)? Es decir, qué es aquello que usted intenta resolver el cliente (Problemas que intentan resolver, necesidades que quieren satisfacer) (max 5)</label>
-      <textarea class="form-control" rows="5" id="dedicacion"></textarea>
+      <textarea class="form-control" rows="5" id="dedicacion" name="dedicacion"></textarea>
     </div>
     <div class="form-group">
       <label for="crecimiento">¿qué preocupaciones o costos no deseados enfrenta el cliente al realizar su trabajo? (max 5)</label>
-      <textarea class="form-control" rows="5" id="crecimiento"></textarea>
+      <textarea class="form-control" rows="5" id="crecimiento" name="crecimiento"></textarea>
     </div>
     <div class="form-group">
       <label for="validaciones">¿Han testeado el producto en el mercado o con potenciales clientes? ¿Qué resultados han obtenido?</label>
-      <textarea class="form-control" rows="5" id="validaciones"></textarea>
+      <textarea class="form-control" rows="5" id="validaciones" name="validaciones"></textarea>
     </div>
     <div class="form-group">
       <label for="testeado">¿cuál es la propuesta de valor de tu proyecto?</label>
-      <textarea class="form-control" rows="5" id="testeado"></textarea>
+      <textarea class="form-control" rows="5" id="testeado" name="testeado"></textarea>
     </div>
     <div class="form-group">
       <label for="novedad">¿por qué el cobre/litio/molibdeno es estructural en la propuesta de valor de tu proyecto?</label>
-      <textarea class="form-control" rows="5" id="novedad"></textarea>
+      <textarea class="form-control" rows="5" id="novedad" name="novedad"></textarea>
     </div>
     <div class="form-group">
       <label for="soluciones">¿Qué valor genera este proyecto a la industria que pertenece? ¿Ahorran costos? ¿Aumentan ingresos? ¿Aumentan eficiencias? Cuantifique</label>
-      <textarea class="form-control" rows="5" id="soluciones"></textarea>
+      <textarea class="form-control" rows="5" id="soluciones" name="soluciones"></textarea>
     </div>
 	<div class="form-group">
-      <label for="dificultad-desarrollo">¿Qué otras soluciones buscan hacerse cargo del mismo problema?</label>
-      <textarea class="form-control" rows="5" id="dificultad-desarrollo"></textarea>
+      <label for="dificultad_desarrollo">¿Qué otras soluciones buscan hacerse cargo del mismo problema?</label>
+      <textarea class="form-control" rows="5" id="dificultad_desarrollo" name="dificultad_desarrollo"></textarea>
     </div>
     <div class="form-group">
-      <label for="dificultades">¿Cuál es el tamaño de mercado que abarca su proyecto? </label>
-      <textarea class="form-control" rows="5" id="dificultades"></textarea>
+      <label for="dificultades">¿Cuál es el tamaño de mercado que abarca su proyecto?</label>
+      <textarea class="form-control" rows="5" id="dificultades" name="dificultades"></textarea>
     </div>
     <div class="form-group">
-      <label for="necesidad">¿quiénes son los actores principales dentro del mercado en el que se desarrollará tu proyecto? </label>
-      <textarea class="form-control" rows="5" id="necesidad"></textarea>
+      <label for="necesidad">¿quiénes son los actores principales dentro del mercado en el que se desarrollará tu proyecto?</label>
+      <textarea class="form-control" rows="5" id="necesidad" name="necesidad"></textarea>
     </div>
      <div class="form-group">
       <label for="tamano">¿Cómo espera que se comercialice su proyecto?</label>
-      <textarea class="form-control" rows="5" id="tamano"></textarea>
+      <textarea class="form-control" rows="5" id="tamano" name="tamano"></textarea>
     </div>
     <div class="form-group">
       <label for="valor">¿Cuáles son los principales desafíos/riesgos de mercado que debe resolver su proyecto para llegar al mercado?</label>
-      <textarea class="form-control" rows="5" id="valor"></textarea>
+      <textarea class="form-control" rows="5" id="valor" name="valor"></textarea>
     </div>
     <div class="form-group">
-      <label for="val-tec">¿Han desarrollado validaciones técnicas de su proyecto (pruebas de concepto, de laboratorio, en terreno u otros)? ¿Qué resultados han obtenido?</label>
-      <textarea class="form-control" rows="5" id="val-tec"></textarea>
+      <label for="val_tec">¿Han desarrollado validaciones técnicas de su proyecto (pruebas de concepto, de laboratorio, en terreno u otros)? ¿Qué resultados han obtenido?</label>
+      <textarea class="form-control" rows="5" id="val_tec" name="val_tec"></textarea>
     </div>
     <div class="form-group">
       <label for="des-tec">¿Cuáles son los desafíos tecnológicos de su proyecto?</label>
-      <textarea class="form-control" rows="5" id="des-tec"></textarea>
+      <textarea class="form-control" rows="5" id="des_tec" name="des_tec"></textarea>
     </div>
     <div class="form-group">
       <label for="inv-pat">Su proyecto involucra patentes? En caso de que si, ¿en qué estado están? En caso de que no, ¿Cómo pretende protegerse?</label>
-      <textarea class="form-control" rows="5" id="inv-pat"></textarea>
+      <textarea class="form-control" rows="5" id="inv_pat" name="inv_pat"></textarea>
     </div>
     <div class="form-group">
       <label for="dif-tec">¿Cuáles son las principales dificultades y riesgos tecnológicos para introducir su producto al mercado? ¿Cómo pretende resolverlas?</label>
-      <textarea class="form-control" rows="5" id="dif-tec"></textarea>
+      <textarea class="form-control" rows="5" id="dif_tec" name="dif_tec"></textarea>
     </div>
     <div class="form-group">
       <label for="comp-eq">¿Quiénes componen el equipo? Escribir breve descripción de los integrantes</label>
-      <textarea class="form-control" rows="5" id="comp-eq"></textarea>
+      <textarea class="form-control" rows="5" id="comp_eq" name="comp_eq"></textarea>
     </div>
     <div class="form-group">
       <label for="cap-eq">¿Cuáles son las capacidades distintivas de este equipo para el desarrollo del proyecto?, ¿Tienen experiencia en proyectos similares?, ¿Cuál es su experiencia con el elemento que utiliza?</label>
-      <textarea class="form-control" rows="5" id="cap-eq"></textarea>
+      <textarea class="form-control" rows="5" id="cap_eq" name="cap_eq"></textarea>
     </div>
     <div class="form-group">
       <label for="ded-eq">¿Qué dedicación tiene cada miembro del equipo a este proyecto? ¿Cuál es el rol de cada uno en el proyecto?</label>
-      <textarea class="form-control" rows="5" id="ded-eq"></textarea>
+      <textarea class="form-control" rows="5" id="ded_eq" name="ded_eq"></textarea>
     </div>
     <div class="form-group">
       <label for="partner">¿con qué otras redes de apoyo, partners cuentan?</label>
-      <textarea class="form-control" rows="5" id="partner"></textarea>
+      <textarea class="form-control" rows="5" id="partner" name="partner"></textarea>
     </div>
     <div class="form-group">
       <label for="brechas">¿cuáles son las principales brechas que tiene su equipo para desarrollar los distintos aspectos de su proyecto?</label>
-      <textarea class="form-control" rows="5" id="brechas"></textarea>
+      <textarea class="form-control" rows="5" id="brechas" name="brechas"></textarea>
     </div>
     <div class="form-group">
       <label for="palanca">¿Han apalancado recursos? Cómo?</label>
-      <textarea class="form-control" rows="5" id="palanca"></textarea>
+      <textarea class="form-control" rows="5" id="palanca" name="palanca"></textarea>
     </div>
     <div class="form-group">
       <label for="cuant-cap">Cuantifique el capital que necesitaría su proyecto para la llegada al mercado y desglose las actividades que se necesitarían para ello. Sea objetivo y considere tanto aspectos técnicos como comerciales</label>
-      <textarea class="form-control" rows="5" id="cuant-cap"></textarea>
+      <textarea class="form-control" rows="5" id="cuant_cap" name="cuant_cap"></textarea>
     </div>
 
     <button type="submit" class="btn btn-default">Enviar</button>
@@ -794,38 +931,38 @@ Hospital de Urgencia <br>Asistencia Pública</h4>
           <h4 class="modal-title">Formulario Crecimiento</h4>
         </div>
         <div class="modal-body">
-          <form>
+          <form action="crecimiento.php" method="post">
     <div class="form-group">
       <label for="nombre">Nombre completo del postulante</label>
-      <input type="text" class="form-control" id="nombre" placeholder="Nombre">
+      <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre">
     </div>
     <div class="form-group">
       <label for="apellido">Apellido completo del postulante:</label>
-      <input type="text" class="form-control" id="apellido" placeholder="Apellido">
+      <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Apellido">
     </div>
     <div class="form-group">
       <label for="rut">Cedula de Identidad: </label>
-      <input type="text" class="form-control" id="rut" placeholder="Cédula de Indentidad">
+      <input type="text" class="form-control" id="rut" name="rut" placeholder="Cédula de Indentidad">
     </div>
      <div class="form-group">
       <label for="mail">E-mail</label>
-      <input type="text" class="form-control" id="mail" placeholder="E.mail">
+      <input type="text" class="form-control" id="mail" name="mail" placeholder="E-mail">
     </div>
     <div class="form-group">
       <label for="telefono">Teléfono</label>
-      <input type="text" class="form-control" id="telefono" placeholder="Teléfono">
+      <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Teléfono">
     </div>
     <div class="form-group">
-      <label for="nombre-empresa">Nombre del emprendimiento o empresa:</label>
-      <input type="text" class="form-control" id="nombre-empresa" placeholder="Nombre de la Empresa">
+      <label for="nombre_empresa">Nombre del emprendimiento o empresa:</label>
+      <input type="text" class="form-control" id="nombre_empresa" name="nombre_empresa" placeholder="Nombre de la Empresa">
     </div>
      <div class="form-group">
-      <label for="nombre-proyecto">Nombre del Proyecto</label>
-      <input type="text" class="form-control" id="nombre-proyecto" placeholder="Nombre del Proyecto">
+      <label for="nombre_proyecto">Nombre del Proyecto</label>
+      <input type="text" class="form-control" id="nombre_proyecto" placeholder="Nombre del Proyecto">
     </div>
     <div class="form-group">
 	  <label for="sel1">¿A qué área pertenece el proyecto?:</label>
-	  <select class="form-control" id="sel1">
+	  <select class="form-control" id="sel1" name="area_proyecto">
 	    <option>Alimentación Mundial</option>
 	    <option>Agua y Medio Ambiente</option>
 	    <option>Energía Electrónica</option>
@@ -836,107 +973,107 @@ Hospital de Urgencia <br>Asistencia Pública</h4>
 	</div>
 	<div class="form-group">
       <label for="cuentanosproyecto">Cuéntanos de tu proyecto ¿De qué se trata?  ¿Hace cuánto está en el mercado? ¿Cuántas ventas tiene? </label>
-      <textarea class="form-control" rows="5" id="cuentanosproyecto"></textarea>
+      <textarea class="form-control" rows="5" id="cuentanosproyecto" name="cuentanosproyecto"></textarea>
     </div>
     <div class="form-group">
       <label for="equipo">¿Qué problema de mercado resuelve tu proyecto? Dimensione el problema</label>
-      <textarea class="form-control" rows="5" id="equipo"></textarea>
+      <textarea class="form-control" rows="5" id="equipo" name="equipo"></textarea>
     </div>
      <div class="form-group">
       <label for="experiencia">¿Cuál es el estado actual del proyecto?</label>
-      <textarea class="form-control" rows="5" id="experiencia"></textarea>
+      <textarea class="form-control" rows="5" id="experiencia" name="experiencia"></textarea>
     </div>
     <div class="form-group">
       <label for="dedicacion">¿Cuál es el modelo de negocios de su empresa? ¿Cómo generan ingresos?</label>
-      <textarea class="form-control" rows="5" id="dedicacion"></textarea>
+      <textarea class="form-control" rows="5" id="dedicacion" name="dedicacion"></textarea>
     </div>
     <div class="form-group">
       <label for="validaciones">¿A quién le resuelve una necesidad? ¿Quién es el cliente? </label>
-      <textarea class="form-control" rows="5" id="validaciones"></textarea>
+      <textarea class="form-control" rows="5" id="validaciones" name="validaciones"></textarea>
     </div>
     <div class="form-group">
-      <label for="patentado">¿Cuáles son los principales trabajos del cliente (Jobs to be done)? Es decir, qué es aquello que usted intenta resolver el cliente (Problemas que intentan resolver, necesidades que quieren satisfacer) (max 5)</label>
-      <textarea class="form-control" rows="5" id="patentado"></textarea>
+      <label for="patentado">¿Cuáles son los principales trabajos del cliente (Jobs to be done)? Es decir, qué es aquello que usted intenta resolver el cliente (Problemas que intentan resolver, necesidades que quieren satisfacer) (max 5): </label>
+      <textarea class="form-control" rows="5" id="patentado" name="patentado"></textarea>
     </div>
     <div class="form-group">
-      <label for="testeado">¿qué preocupaciones o costos no deseados enfrenta el cliente al realizar su trabajo? (max 5)</label>
-      <textarea class="form-control" rows="5" id="testeado"></textarea>
+      <label for="testeado">¿qué preocupaciones o costos no deseados enfrenta el cliente al realizar su trabajo? (max 5): </label>
+      <textarea class="form-control" rows="5" id="testeado" name="testeado"></textarea>
     </div>
     <div class="form-group">
       <label for="soluciones">¿Cómo el cliente utiliza su producto? ¿Cada cuánto lo compra?</label>
-      <textarea class="form-control" rows="5" id="soluciones"></textarea>
+      <textarea class="form-control" rows="5" id="soluciones" name="soluciones"></textarea>
     </div>
     <div class="form-group">
       <label for="dificultades">¿Cuál es la propuesta de valor de tu proyecto?</label>
-      <textarea class="form-control" rows="5" id="dificultades"></textarea>
+      <textarea class="form-control" rows="5" id="dificultades" name="dificultades"></textarea>
     </div>
     <div class="form-group">
       <label for="tamano">¿por qué el cobre/litio/molibdeno es estructural en la propuesta de valor de tu proyecto?</label>
-      <textarea class="form-control" rows="5" id="tamano"></textarea>
+      <textarea class="form-control" rows="5" id="tamano" name="tamano"></textarea>
     </div>
     <div class="form-group">
       <label for="valor">¿Qué valor genera este proyecto en la industria que pertenece? ¿Ahorran costos? ¿Aumentan ingresos? ¿Aumentan eficiencias? Cuantifique</label>
-      <textarea class="form-control" rows="5" id="valor"></textarea>
+      <textarea class="form-control" rows="5" id="valor" name="valor"></textarea>
     </div>
     <div class="form-group">
       <label for="modelo">Cuente las proyecciones de ventas a 3 años y tasa de crecimiento.</label>
-      <textarea class="form-control" rows="5" id="modelo"></textarea>
+      <textarea class="form-control" rows="5" id="modelo" name="modelo"></textarea>
     </div>
     <div class="form-group">
       <label for="crecimiento">¿Cuál es el tamaño de mercado que abarca su proyecto?</label>
-      <textarea class="form-control" rows="5" id="crecimiento"></textarea>
+      <textarea class="form-control" rows="5" id="crecimiento" name="crecimiento"></textarea>
     </div>
     <div class="form-group">
-      <label for="plan-comercial">¿quiénes son los actores principales de su mercado? </label>
-      <textarea class="form-control" rows="5" id="plan-comercial"></textarea>
+      <label for="plan_comercial">¿quiénes son los actores principales de su mercado? </label>
+      <textarea class="form-control" rows="5" id="plan_comercial" name="plan_comercial" ></textarea>
     </div>
     <div class="form-group">
       <label for="capital">¿Cuáles son los principales desafíos del mercado?</label>
-      <textarea class="form-control" rows="5" id="capital"></textarea>
+      <textarea class="form-control" rows="5" id="capital" name="capital"></textarea>
     </div>
     <div class="form-group">
       <label for="comp">Identifique sus competidores y explique cómo se diferencia de ellos</label>
-      <textarea class="form-control" rows="5" id="comp"></textarea>
+      <textarea class="form-control" rows="5" id="comp" name="comp"></textarea>
     </div>
     <div class="form-group">
-      <label for="val-tec">¿Cuáles han sido las validaciones técnicas que demuestran el desempeño del producto? Cuente los resultados</label>
-      <textarea class="form-control" rows="5" id="val-tec"></textarea>
+      <label for="val_tec">¿Cuáles han sido las validaciones técnicas que demuestran el desempeño del producto? Cuente los resultados</label>
+      <textarea class="form-control" rows="5" id="val_tec" name="val_tec"></textarea>
     </div>
     <div class="form-group">
-      <label for="invol-pat">¿Su proyecto involucra patentes? En caso de que si, ¿en qué estado están? En caso de que no, ¿Cómo pretende protegerse?</label>
-      <textarea class="form-control" rows="5" id="invol-pat"></textarea>
+      <label for="invol_pat">¿Su proyecto involucra patentes? En caso de que si, ¿en qué estado están? En caso de que no, ¿Cómo pretende protegerse?</label>
+      <textarea class="form-control" rows="5" id="invol_pat" name="invol_pat"></textarea>
     </div>
     <div class="form-group">
       <label for="robust">¿Qué tipo de validaciones robustecería el proyecto?</label>
-      <textarea class="form-control" rows="5" id="robust"></textarea>
+      <textarea class="form-control" rows="5" id="robust" name="robust"></textarea>
     </div>
     <div class="form-group">
-      <label for="comp-eq">¿Quiénes componen el equipo? breve descripción de los integrantes.</label>
-      <textarea class="form-control" rows="5" id="comp-eq"></textarea>
+      <label for="comp_eq">¿Quiénes componen el equipo? breve descripción de los integrantes.</label>
+      <textarea class="form-control" rows="5" id="comp_eq" name="comp_eq"></textarea>
     </div>
     <div class="form-group">
-      <label for="cap-dist">¿Cuáles son las capacidades distintivas de este equipo para el desarrollo del proyecto?, ¿Tienen experiencia en proyectos similares?, ¿Cuál es su experiencia con el elemento que utiliza?</label>
-      <textarea class="form-control" rows="5" id="cap-dist"></textarea>
+      <label for="cap_dist">¿Cuáles son las capacidades distintivas de este equipo para el desarrollo del proyecto?, ¿Tienen experiencia en proyectos similares?, ¿Cuál es su experiencia con el elemento que utiliza?</label>
+      <textarea class="form-control" rows="5" id="cap_dist" name="cap_dist"></textarea>
     </div>
     <div class="form-group">
       <label for="dedic">¿Cuáles son las capacidades distintivas de este equipo para el desarrollo del proyecto?, ¿Tienen experiencia en proyectos similares?, ¿Cuál es su experiencia con el elemento que utiliza?</label>
-      <textarea class="form-control" rows="5" id="dedic"></textarea>
+      <textarea class="form-control" rows="5" id="dedic" name="dedic"></textarea>
     </div>
     <div class="form-group">
       <label for="partner">¿con qué otras redes de apoyo, partners cuentan?</label>
-      <textarea class="form-control" rows="5" id="partner"></textarea>
+      <textarea class="form-control" rows="5" id="partner" name="partner"></textarea>
     </div>
     <div class="form-group">
       <label for="brechas">¿cuáles son las principales brechas que tiene su equipo para desarrollar los distintos aspectos de su proyecto?</label>
-      <textarea class="form-control" rows="5" id="brechas"></textarea>
+      <textarea class="form-control" rows="5" id="brechas" name="brechas"></textarea>
     </div>
     <div class="form-group">
       <label for="palanca">¿Han apalancado recursos? ¿Cómo?</label>
-      <textarea class="form-control" rows="5" id="palanca"></textarea>
+      <textarea class="form-control" rows="5" id="palanca" name="palanca"></textarea>
     </div>
     <div class="form-group">
       <label for="escalamiento">Cuantifique el capital que necesita su proyecto para el escalamiento comercial y sus respectivas actividades. Sea objetivo y considere tanto aspectos técnicos como comerciales</label>
-      <textarea class="form-control" rows="5" id="escalamiento"></textarea>
+      <textarea class="form-control" rows="5" id="escalamiento" name="escalamiento"></textarea>
     </div>
     <button type="submit" class="btn btn-default">Enviar</button>
   </form>
@@ -999,7 +1136,7 @@ $('#myCarousel').carousel({
 </script>
 <script>
 	$(document).on('click', 'a', function(event){
-    event.preventDefault();
+    
 
     $('html, body').animate({
         scrollTop: $( $.attr(this, 'href') ).offset().top
